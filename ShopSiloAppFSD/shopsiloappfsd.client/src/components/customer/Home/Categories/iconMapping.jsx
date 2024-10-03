@@ -1,0 +1,58 @@
+import {
+    FaKeyboard,
+    FaLaptop,
+    FaMobileAlt,
+    FaTshirt,
+    FaHome,
+    FaCamera,
+    FaTv,
+    FaSnowflake,
+    FaSoap,
+    FaWind,
+    FaCouch,
+    FaChair,
+    FaBed,
+    FaUtensils,
+    FaMale,
+    FaFemale,
+    FaChild,
+    FaSmile,
+    FaPaintBrush,
+    FaHeartbeat,
+    FaBasketballBall,
+    FaBook,
+    FaBookOpen,
+    FaBookReader,
+    FaQuestionCircle, // Default icon
+} from 'react-icons/fa';
+
+const iconMap = {
+    FaKeyboard,
+    FaLaptop,
+    FaMobileAlt,
+    FaTshirt,
+    FaHome,
+    FaCamera,
+    FaTv,
+    FaSnowflake,
+    FaSoap,
+    FaWind,
+    FaCouch,
+    FaChair,
+    FaBed,
+    FaUtensils,
+    FaMale,
+    FaFemale,
+    FaChild,
+    FaSmile,
+    FaPaintBrush,
+    FaHeartbeat,
+    FaBasketballBall,
+    FaBook,
+    FaBookOpen,
+    FaBookReader,
+};
+
+export const getIcon = (iconName) => {
+    return iconMap[iconName] || FaQuestionCircle; // Return default icon if not found
+};

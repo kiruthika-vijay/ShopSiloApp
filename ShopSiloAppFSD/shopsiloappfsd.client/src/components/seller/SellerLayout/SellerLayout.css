@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400;1,600;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.navButton {
+    width: 100%;
+}
+body {
+    font-family: "Open Sans", sans-serif !important;
+    background: #ebe9e9;
+}
+
+ul {
+    padding-left: 0 !important;  /*Override Bootstrap's default padding*/ 
+}
+
+::-webkit-scrollbar{width:5px !important; height:5px !important;}
+::-webkit-scrollbar-thumb{background: #0858f7 !important}
+::-webkit-scrollbar-track{background: transparent !important}
+
+.btn-blue{background: #0858f7 !important; font-size: 15px !important; font-weight: 500; color: #fff !important; text-transform: capitalize}
+
+header {
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000
+}
+
+    header .logo {
+        text-decoration: none;
+    }
+
+        header .logo img {
+            width: 35px;
+        }
+
+        header .logo span {
+            color: #292929;
+            font-weight: 800;
+            font-size: 24px;
+        }
+
+    header button.rounded-circle {
+        min-width: 40px !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: #f0f5ff !important;
+        color: #0858f7;
+        margin-right: 10px;
+    }
+        header button.rounded-circle svg {
+            color: #292929;
+            font-size: 18px !important;
+            transition: all 0 2s ease-in-out;
+        }
+        header button.rounded-circle:hover svg {
+            color: #0858f7 !important;
+        }
+        header button.rounded-circle svg {
+            color: #292929;
+            font-size: 18px !important;
+        }
+
+        .searchBox {
+            width: 400px;
+            height: 40px;
+            background: #f0f5ff;
+            margin-left: 20px;
+            border-radius: 6px;
+            padding: 3px 15px;
+        }
+        .searchBox input {
+            background: transparent;
+            border: 0px;
+            outline: none;
+            font-size: 14px;
+            color: #292929;
+        }
+
+        .searchBox input::-webkit-input-placeholder{
+            color: rgba(0,0,0,0.6);
+        }
+
+        .searchBox svg {
+            font-size: 18px;
+            color: #292929;
+        }
+.myAcc {
+    text-align: left !important;
+    color: #0858f7 !important;
+    text-transform: capitalize !important;
+}
+ .userImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #0858f7 ;
+    padding: 2px;
+    border-radius: 100%;
+}
+    .userImg .rounded-circle{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            overflow:hidden;
+            width:40px;
+            height:40px;
+            cursor: pointer;
+            position:relative;
+        }
+
+        .myAcc .userImg .rounded-circle img {
+            object-fit: cover;
+            width: 100%;
+        }
+
+.myAcc .userInfo {
+    padding-left: 10px;
+}
+
+    .myAcc .userInfo h4 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 0px;
+        color: #292929;
+    }
+    .myAcc .userInfo p {
+        margin-top: 0px;
+        font-size: 12px;
+        color: #000;
+        opacity: 0.7;
+    }
+#account-menu li {font-size: 14px !important; padding: 12px 15px !important}
+#account-menu li svg {font-size: 20px !important}
+#notifications .MuiPaper-elevation{
+    right: 240px !important;
+    width: 300px !important;
+    left: auto !important;
+}
+
+.dropdown_list h4{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dropdown_list .scroll{max-height: 300px; overflow-y:scroll; overflow-x: hidden}
+.dropdown_list li.MuiButtonBase-root {
+    background: #ebf6ff !important;
+    color: #000 !important;
+    padding: 10px 15px !important
+}
+.dropdownInfo h4{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dropdownInfo { padding-left: 15px}
+.dropdownInfo h4{ font-size: 14px; font-weight: 500; white-space:break-spaces; line-height: 25px; margin-top:0px}
+.dropdownInfo h4 b{ font-weight: 600; margin-right: 5px;}
+.dropdownInfo p{ font-size:12px; font-weight: 500; margin-top: 0px;}
+.text-sky{
+    color: #0859f7 !important;
+}
+
+
+/*{Sidebar styling}*/
+.main .sidebarWrapper {width:20%; flex:0 0 20%; transition: all 0.3s ease-in-out;}
+.main .sidebarWrapper .sidebar{width:20%; height: 100vh; position: fixed; top: 70px; left: 0px; background:#fff;
+                               overflow-x:hidden; overflow-y:scroll; max-height: calc(100% - 70px); padding-bottom: 40px
+}
+.main .sidebarWrapper .sidebar::-webkit-scrollbar{width:3px !important}
+.main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb{background: transparent !important}
+.main .sidebarWrapper .sidebar::-webkit-scrollbar-thumb{background: #0858f7 !important}
+
+.main .sidebarWrapper .sidebar ul{margin-bottom:0px; margin-left:8px; margin-right: 8px; margin-top: 5px;}
+.main .sidebarWrapper .sidebar ul li{list-style: none}
+.main .sidebarWrapper .sidebar ul li button{color: #5e5d72 !important; text-align:left; justify-content: left;
+                                            border-radius: 10px !important; padding: 12px 10px !important;
+                                            align-items:center; text-transform: capitalize !important; font-weight: 600 !important;
+                                            font-family:"Open Sans", sans-serif !important; font-size: 15px !important;
+}
+    .main .sidebarWrapper .sidebar ul li button .icon{
+        display:flex; align-items: center; justify-content: center; width: 25px; height: 25px;
+        margin-right: 10px
+    }
+    .main .sidebarWrapper .sidebar ul li button .icon svg{
+        color: #000;
+        opacity: 0.8;
+        font-size: 22px
+    }
+        .main .sidebarWrapper .sidebar ul li button.active .icon svg{color:#0858f7 !important}
+        main .sidebarWrapper .sidebar ul li button * {
+            color: #5e5d72 !important
+        }
+    .main .sidebarWrapper .sidebar ul li button .arrow {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        transition: all 0.3s ease-in-out
+    }
+.main .sidebarWrapper .sidebar ul li button.active .arrow {transform: rotate(90deg)}
+.main .sidebarWrapper .sidebar ul li button:hover {
+    background: #f1f1f1 !important
+}
+    .main .sidebarWrapper .sidebar ul li button.active{background: #f1f1f1 !important}
+
+    .main .sidebarWrapper .sidebar ul .submenu{padding:0px 45px; position: relative;
+    transition: all 0.3s ease-in-out;
+}
+        .main .sidebarWrapper .sidebar ul .submenu::before {
+            content: "";
+            width: 2px;
+            height: 95%;
+            position: absolute;
+            top: 0px;
+            left: 25px;
+            right: 45px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .main .sidebarWrapper .sidebar ul .submenu li {
+            width: 100%;
+            margin-left: 45px;
+            list-style: none !important;
+        }
+        .main .sidebarWrapper .sidebar ul .submenu li a{
+            color: #5e5d72 !important;
+            text-decoration: none !important;
+            display: block;
+            padding: 6px 0px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .main .sidebarWrapper .sidebar ul .submenu li a:hover{
+            color: #0859f7 !important;
+        }
+.main .sidebarWrapper .sidebar ul .submenuWrapper { transition: all 0.4s ease-in-out;}
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapsed {
+    height: 0px;
+}
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapsed .submenu{opacity: 0;}
+
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapse {
+    height: auto;
+}
+
+    .main .sidebarWrapper .sidebar ul .submenuWrapper.colapse .submenu {
+        opacity: 1;
+    }
+
+.logoutWrapper {padding: 0px 25px}
+.logoutWrapper .logoutBox{width: 100%; height: 130px; padding: 25px; background: #bcd2fd; border-radius: 10px;
+               margin-bottom:20px; display: flex; align-items:center; justify-content:center; overflow: hidden;
+               position:relative
+}
+.logoutWrapper .logoutBox::before{content:"";width:70px; height:70px; background: #0858f7;
+                                  border-radius: 100%; position: absolute; top: -20px; right: -20px; opacity: 0.5 
+}
+    .logoutWrapper .logoutBox::after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background: #0858f7;
+        border-radius: 100%;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        opacity: 0.5
+    }
+.logoutWrapper .logoutBox button{font-size: 14px !important; font-weight: 600 !important}
+.logoutWrapper .logoutBox button svg{margin-right: 5px; font-size: 18px !important}
+
+/*{Seller Dashboard Styling}*/
+.main .content{width: 80%; flex: 0 0 80%}
+.right-content{padding:25px 25px;}
+
+.dashboardBoxWrapper{gap:5px; width:100%; flex-wrap: wrap}
+.dashboardBoxWrapper .dashboardBox{width:90%; height: 170px; border-radius:10px; overflow:hidden;
+                                   padding:20px; display:flex; flex-direction: column; 
+                                   justify-content:space-around; text-align:left !important; position:relative; cursor:pointer; 
+}
+
+    .dashboardBoxWrapper:hover .dashboardBox:hover{
+        transform: scale(1.1);
+    }
+    .dashboardBoxWrapper .dashboardBox .toggleIcon {
+        font-size: 22px;
+        color: rgba(0,0,0,0.3)
+    }
+    .dashboardBoxWrapper .dashboardBox .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 3px;
+        border-radius: 5px;
+        background-image: linear-gradient(to bottom right, rgba(0,0,0,0.0), rgba(0,0,0,0.2));
+    }
+    .dashboardBoxWrapper .dashboardBox .icon svg {
+        font-size: 25px;
+        opacity: 0.6;
+        color: #fff
+    }
+    .dashboardBoxWrapper .dashboardBox .col1 h4 {
+        font-size: 16px;
+        font-weight: 600
+    }
+    .dashboardBoxWrapper .dashboardBox .bottomEle{
+        position: relative;
+    }
+    .dashboardBoxWrapper .dashboardBox .chart {
+        font-size: 60px;
+        color: #000;
+        opacity: 0.1;
+        position: absolute;
+        bottom: 20px;
+        left: 20px
+    }
+        .dashboardBoxWrapper .dashboardBox .chart svg {
+            font-size: 110px;
+            color: #000;
+        }
+        .dashboardBoxWrapper .dashboardBox .col1 span {
+            font-size: 40px;
+            font-weight: bold;
+            line-height: 45px
+        }
+    .dashboardBoxWrapperRow .box {
+        width: 100%;
+        height: 100%;
+    }
+
+.graphBox {
+    background-image: linear-gradient(#1a1a4b, #d5006d); /* Darker gradient with dark blue and pink */
+    border-radius: 10px;
+    padding: 25px;
+}
+
+ .card{margin: 20px 0px; border-radius: 10px;}
+ .card .hd{font-size:18px; font-weight:bold; color: #403e57}
+ .card .col-md-3 h4{font-size:14px !important; font-weight:800 !important; text-transform: capitalize;
+                    color: #403e57
+ }
+.table .thead-dark th{background-color: #1866ee !important; color: #fff; text-align:center; padding: 2px; border: 1px solid rgba(255, 255, 255, 0.1); font-size: 13px !important}

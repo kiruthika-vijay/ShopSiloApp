@@ -1,0 +1,122 @@
+/* Sidebar Drawer styles */
+/*.drawer {
+    width: 240px;
+    flex-shrink: 0;
+    transition: width 0.4s ease;
+}
+
+.drawerCollapsed {
+    width: 70px;*/ /* Collapsed width */
+/*}
+
+.drawerPaper {
+    width: 240px;
+    background-color: #ffffff;*/ /* White background */
+    /*color: #333333;*/ /* Darker shade for text (contrast against white background) */
+    /*transition: width 0.4s ease-in-out, background-color 0.3s;
+    border-right: 1px solid #e0e0e0;*/ /* Subtle border */
+    /*box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);*/ /* Soft shadow */
+/*}
+
+.drawerCollapsed .drawerPaper {
+    width: 70px;*/ /* Collapsed width */
+    /*top: 70px;
+}*/
+
+/* Header of the sidebar */
+/*.sidebarHeader {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #214e34;
+    color: #E8EBE4;
+    font-weight: bold;
+    border-bottom: 1px solid #e0e0e0;
+}*/
+
+/* Collapse button styles */
+/*.collapseButton {
+    color: #E8EBE4;
+}*/
+
+/* List styles */
+/*.sidebarList {
+    padding: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.listCollapsed .sidebarList {
+    opacity: 0.5;
+}
+
+.sidebarListItem {
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    color: #555555;*/ /* Dark grey for default text */
+    /*position: relative;
+}*/
+
+    /* Hover effects for list items */
+    /*.sidebarListItem:hover {
+        background-color: #e0e0e0;*/ /* Light grey background for hover */
+        /*color: #00796b;*/ /* Teal hover text color for distinction */
+        /*transform: translateX(10px);*/ /* Slight slide effect */
+    /*}*/
+
+/* When the drawer is collapsed */
+/*.drawerCollapsed .sidebarListItem {
+    justify-content: center;
+    padding: 10px;*/ /* Reduce padding for collapsed state */
+/*}*/
+
+/* Hide text when collapsed */
+/*.sidebarListItem .MuiListItemText-root {
+    transition: opacity 0.4s ease-in-out;
+}
+
+.drawerCollapsed .sidebarListItem .MuiListItemText-root {
+    opacity: 0;*/ /* Hide text when collapsed */
+/*}*/
+
+/* Active and hover states */
+/*.sidebarListItem:active,
+.sidebarListItem.active {
+    background-color: #00796b;*/ /* Teal for active state */
+    /*color: white;*/ /* Ensure text remains visible */
+/*}*/
+
+/* Animations for smooth sidebar transitions */
+/*@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.drawerPaper {
+    animation: slideIn 0.7s ease-out;*/ /* Smooth slide in */
+/*}
+
+@keyframes glowHover {
+    0% {
+        box-shadow: none;
+    }
+
+    50% {
+        box-shadow: 0px 0px 15px #5C7457*/ /* Teal glow effect */
+    /*}
+
+    100% {
+        box-shadow: none;
+    }
+}
+
+.sidebarListItem:hover {
+    animation: glowHover 0.4s ease-in-out;*/ /* Glow animation on hover */
+/*}*/

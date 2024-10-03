@@ -1,0 +1,10 @@
+a {
+    text-decoration: none !important;
+    color: dimgray !important;
+}
+a:hover{
+    color: #ff6a00 !important;
+}
+.textlink{
+    color: aliceblue !important;
+}

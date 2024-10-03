@@ -1,0 +1,14 @@
+nav {
+    display: flex !important;
+    max-width: 100vw !important; /* Limit to viewport width */
+    flex-wrap: nowrap !important; /* Prevent wrapping to the next line */
+    overflow: hidden !important; /* Hide any overflowing content */
+}
+
+nav .block {
+    text-decoration: none !important; /* Remove underline from links */
+}
+
+nav .block:hover {
+    background-color: whitesmoke !important/* Subtle hover effect for links */
+}

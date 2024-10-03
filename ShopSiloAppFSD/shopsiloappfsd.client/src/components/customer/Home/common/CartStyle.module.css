@@ -1,0 +1,28 @@
+/* CartButton.css */
+.cartButton {
+    width: 100%; /* Full width */
+}
+
+* {
+    all: !important;
+}
+.cartButton button {
+    background-color: #F97316 !important; /* Orange background */
+    padding: 0.75rem; /* Equivalent to py-3 in Tailwind */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+    border: none; /* Remove default button border */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.cartButton button:hover {
+    background-color: #EA580C !important; /* Darker orange on hover */
+}
+
+.cartButton button:disabled {
+    background-color: #6B7280 !important; /* Gray background when disabled */
+    cursor: not-allowed !important; /* Not allowed cursor when disabled */
+}

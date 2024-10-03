@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ShopSiloAppFSD.Server.props" />
+</Project>
