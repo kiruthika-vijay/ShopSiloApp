@@ -39,6 +39,7 @@ Before you begin, ensure you have the following installed on your machine:
 
 Since it holds confidential secret keys for API integrations.
 
+```bash
 {
   "Logging": {
     "LogLevel": {
@@ -65,8 +66,9 @@ Since it holds confidential secret keys for API integrations.
     "Key": "RANDOM_JWT_KEY" //random key
   }
 }
-
+```
 
 ```bash
 git clone https://github.com/kiruthika-vijay/ShopSiloApp.git
 cd ShopSiloApp
+```
