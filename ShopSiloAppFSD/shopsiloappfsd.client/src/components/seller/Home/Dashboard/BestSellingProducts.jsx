@@ -56,7 +56,7 @@ const BestSellingProducts = () => {
 
         const fetchProductNames = async () => {
             try {
-                const response = await apiClient.get('/SellerDashboard/products/names');
+                const response = await apiClient.get('/SellerDashboard/products');
                 setProductNames(response.data.$values);
             } catch (err) {
                 setError(err.message || 'Error fetching product names');

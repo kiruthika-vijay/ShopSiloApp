@@ -213,5 +213,11 @@ namespace ShopSiloAppFSD.Repository
             }
         }
 
+        public async Task<IEnumerable<Category>> GetSubcategoriesAsync(int parentCategoryId)
+        {
+            return await _context.Categories
+                .Where(c => c.ParentCategoryId == parentCategoryId)
+                .ToListAsync();
+        }
     }
 }

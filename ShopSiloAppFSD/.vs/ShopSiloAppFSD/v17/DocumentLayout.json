@@ -3,183 +3,24 @@
   "WorkspaceRootPath": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\admin\\admindashboard\\topsellingproductschart.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\admin\\admindashboard\\topsellingproductschart.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\interfaces\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\interfaces\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\repository\\sellerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\repository\\sellerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\customer\\home\\bestselling\\bestselling.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\customer\\home\\bestselling\\bestselling.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\AppData\\Local\\Temp\\Rar$DIa2352.21618\\AdminRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\customer\\home\\homepage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\customer\\home\\homepage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\customer\\home\\flashsales\\todaydeals.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\customer\\home\\flashsales\\todaydeals.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDD30A05-D96F-4788-9B7C-070279859EFB}|ShopSiloApp.Tests\\ShopSiloApp.Tests.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloapp.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDD30A05-D96F-4788-9B7C-070279859EFB}|ShopSiloApp.Tests\\ShopSiloApp.Tests.csproj|solutionrelative:shopsiloapp.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\admin\\auth\\adminlogin.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\admin\\auth\\adminlogin.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\controllers\\aauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\controllers\\aauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\admin\\admindashboard\\salesanalyticschart.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\admin\\admindashboard\\salesanalyticschart.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\admin\\headeradmin\\headeradmin.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\admin\\headeradmin\\headeradmin.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\admin\\admindashboard\\admindashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\admin\\admindashboard\\admindashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\admin\\headeradmin\\adminnavigation.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\admin\\headeradmin\\adminnavigation.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\admin\\sellerdetails\\sellerlist.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\admin\\sellerdetails\\sellerlist.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\auth\\sellerlogin.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\auth\\sellerlogin.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\auth\\sellerregister.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\auth\\sellerregister.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\customer\\auth\\resetpassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\customer\\auth\\resetpassword.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\admin\\productdetails\\productform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\admin\\productdetails\\productform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\home\\common\\sellernavbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\home\\common\\sellernavbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\home\\common\\sellersidebar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\home\\common\\sellersidebar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\home\\order\\orderview.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\home\\order\\orderview.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\customer\\auth\\login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\customer\\auth\\login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\home\\analytics\\revenueanalytics.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\home\\analytics\\revenueanalytics.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\home\\product\\editproductform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\home\\product\\editproductform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\dto\\updateproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\dto\\updateproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\dto\\uploadproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\dto\\uploadproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\services\\cloudinaryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\services\\cloudinaryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\home\\dashboard\\bestsellingproducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\home\\dashboard\\bestsellingproducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\home\\product\\productform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\home\\product\\productform.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\home\\dashboard\\sellerdashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\home\\dashboard\\sellerdashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\repository\\sellerdashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\repository\\sellerdashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\home\\dashboard\\leaderboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\home\\dashboard\\leaderboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\seller\\home\\dashboard\\leaderboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\seller\\home\\dashboard\\leaderboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -189,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -204,590 +45,68 @@
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InvoiceService.cs",
+              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Services\\InvoiceService.cs",
+              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Services\\InvoiceService.cs",
+              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Services\\InvoiceService.cs",
+              "RelativeToolTip": "ShopSiloAppFSD.Server\\Services\\InvoiceService.cs",
+              "ViewState": "AQIAAH8AAAAAAAAAAAAAwI0AAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T17:10:27.641Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TopsellingProductschart.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\TopsellingProductschart.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\TopsellingProductschart.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\TopsellingProductschart.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\TopsellingProductschart.jsx",
-              "ViewState": "AQIAADsAAAAAAAAAAAAAwEoAAABXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T18:21:46.39Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAQwEQAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T18:20:22.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IAdminRepository.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Interfaces\\IAdminRepository.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Interfaces\\IAdminRepository.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Interfaces\\IAdminRepository.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Interfaces\\IAdminRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T18:19:38.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AdminRepository.cs",
-              "DocumentMoniker": "C:\\Users\\User\\AppData\\Local\\Temp\\Rar$DIa2352.21618\\AdminRepository.cs",
-              "ToolTip": "C:\\Users\\User\\AppData\\Local\\Temp\\Rar$DIa2352.21618\\AdminRepository.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAAAGQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T18:16:47.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminRepository.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\AdminRepository.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Repository\\AdminRepository.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\AdminRepository.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Repository\\AdminRepository.cs",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAkwGcAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T18:15:30.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BestSelling.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Home\\BestSelling\\BestSelling.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\customer\\Home\\BestSelling\\BestSelling.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Home\\BestSelling\\BestSelling.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\customer\\Home\\BestSelling\\BestSelling.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T18:09:24.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SellerRepository.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\SellerRepository.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Repository\\SellerRepository.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\SellerRepository.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Repository\\SellerRepository.cs",
-              "ViewState": "AQIAAMsAAAAAAAAAAAAuwBoAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T10:49:37.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HomePage.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Home\\HomePage.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\customer\\Home\\HomePage.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Home\\HomePage.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\customer\\Home\\HomePage.jsx",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T18:09:54.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TodayDeals.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Home\\FlashSales\\TodayDeals.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\customer\\Home\\FlashSales\\TodayDeals.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Home\\FlashSales\\TodayDeals.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\customer\\Home\\FlashSales\\TodayDeals.jsx",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T17:50:23.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UnitTest1.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloApp.Tests\\UnitTest1.cs",
-              "RelativeDocumentMoniker": "ShopSiloApp.Tests\\UnitTest1.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloApp.Tests\\UnitTest1.cs",
-              "RelativeToolTip": "ShopSiloApp.Tests\\UnitTest1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T17:42:13.293Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AauthController.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Controllers\\AauthController.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Controllers\\AauthController.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Controllers\\AauthController.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Controllers\\AauthController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAIwC0AAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:52:55.604Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAAF0BAAAAAAAAAAAAwGgBAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T11:10:26.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Repository\\ProductRepository.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\ProductRepository.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Repository\\ProductRepository.cs",
-              "ViewState": "AQIAAGoBAAAAAAAAAAAkwHIBAABLAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T12:01:19.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Program.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Program.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Program.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Program.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAowFMAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T17:32:22.058Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\UserRepository.cs",
               "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Repository\\UserRepository.cs",
               "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\UserRepository.cs",
               "RelativeToolTip": "ShopSiloAppFSD.Server\\Repository\\UserRepository.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAkwCEAAAAQAAAA",
+              "ViewState": "AQIAALMAAAAAAAAAAAAswMEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:53:06.522Z",
+              "WhenOpened": "2024-10-06T17:10:00.569Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AdminDashboard.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\AdminDashboard.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\AdminDashboard.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\AdminDashboard.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\AdminDashboard.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T17:23:48.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "HeaderAdmin.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\HeaderAdmin\\HeaderAdmin.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\Admin\\HeaderAdmin\\HeaderAdmin.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\HeaderAdmin\\HeaderAdmin.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\Admin\\HeaderAdmin\\HeaderAdmin.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T17:23:59.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "SalesAnalyticsChart.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\SalesAnalyticsChart.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\SalesAnalyticsChart.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\SalesAnalyticsChart.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\Admin\\AdminDashboard\\SalesAnalyticsChart.jsx",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T17:30:55.959Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AdminLogin.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\Auth\\AdminLogin.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\Admin\\Auth\\AdminLogin.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\Auth\\AdminLogin.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\Admin\\Auth\\AdminLogin.jsx",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAcwG0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T17:11:06.784Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "App.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\App.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\App.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\App.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\App.jsx",
-              "ViewState": "AQIAADcAAAAAAAAAAAAAAEYAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T16:50:28.718Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AdminNavigation.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\HeaderAdmin\\AdminNavigation.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\Admin\\HeaderAdmin\\AdminNavigation.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\HeaderAdmin\\AdminNavigation.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\Admin\\HeaderAdmin\\AdminNavigation.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T17:22:54.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SellerList.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\SellerDetails\\SellerList.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\Admin\\SellerDetails\\SellerList.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\SellerDetails\\SellerList.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\Admin\\SellerDetails\\SellerList.jsx",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAD8AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T17:22:13.727Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "index.css",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\index.css",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\index.css",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\index.css",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\index.css",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAswCkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-03T17:16:39.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "App.css",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\App.css",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\App.css",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\App.css",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\App.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-03T17:16:37.004Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "SellerLogin.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Auth\\SellerLogin.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Auth\\SellerLogin.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Auth\\SellerLogin.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Auth\\SellerLogin.jsx",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAAAFgAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T16:55:07.24Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 2,
               "Title": "UsersController.cs",
               "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Controllers\\UsersController.cs",
               "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Controllers\\UsersController.cs",
               "RelativeToolTip": "ShopSiloAppFSD.Server\\Controllers\\UsersController.cs",
-              "ViewState": "AQIAAMUAAAAAAAAAAAAAANEAAAAhAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAgwEkAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:53:09.598Z",
+              "WhenOpened": "2024-10-06T15:32:09.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ResetPassword.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Auth\\ResetPassword.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\customer\\Auth\\ResetPassword.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Auth\\ResetPassword.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\customer\\Auth\\ResetPassword.jsx",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACEAAABIAAAA",
+              "DocumentIndex": 4,
+              "Title": "App.jsx",
+              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\App.jsx",
+              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\App.jsx",
+              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\App.jsx",
+              "RelativeToolTip": "shopsiloappfsd.client\\src\\App.jsx",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAHQAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T16:53:02.375Z",
+              "WhenOpened": "2024-10-06T15:30:47.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "SellerRegister.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Auth\\SellerRegister.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Auth\\SellerRegister.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Auth\\SellerRegister.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Auth\\SellerRegister.jsx",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAAAGgAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T16:57:28.203Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "SellerNavbar.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\common\\SellerNavbar.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Home\\common\\SellerNavbar.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\common\\SellerNavbar.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Home\\common\\SellerNavbar.jsx",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAAAG8AAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T13:53:56.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "SellerSidebar.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\common\\SellerSidebar.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Home\\common\\SellerSidebar.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\common\\SellerSidebar.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Home\\common\\SellerSidebar.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGMAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T16:42:29.221Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Models\\Product.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Models\\Product.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Models\\Product.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAcwEYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:37:04.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "OrderRepository.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\OrderRepository.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Repository\\OrderRepository.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\OrderRepository.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Repository\\OrderRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T16:27:43.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "OrderView.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Order\\OrderView.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Order\\OrderView.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Order\\OrderView.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Order\\OrderView.jsx",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACAAAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T16:24:25.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Login.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Auth\\Login.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\customer\\Auth\\Login.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Auth\\Login.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\customer\\Auth\\Login.jsx",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T15:43:11.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "RevenueAnalytics.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Analytics\\RevenueAnalytics.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Analytics\\RevenueAnalytics.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Analytics\\RevenueAnalytics.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Analytics\\RevenueAnalytics.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T13:52:08.381Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "EditProductForm.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Product\\EditProductForm.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Product\\EditProductForm.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Product\\EditProductForm.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Product\\EditProductForm.jsx",
-              "ViewState": "AQIAAGwAAAAAAAAAAIBJwHMAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T08:50:46.51Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "UploadProductDto.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\DTO\\UploadProductDto.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\DTO\\UploadProductDto.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\DTO\\UploadProductDto.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\DTO\\UploadProductDto.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAA5wBgAAABYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T12:08:28.004Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "UpdateProductDto.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\DTO\\UpdateProductDto.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\DTO\\UpdateProductDto.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\DTO\\UpdateProductDto.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\DTO\\UpdateProductDto.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwBQAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T12:08:29.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "CloudinaryService.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Services\\CloudinaryService.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Services\\CloudinaryService.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Services\\CloudinaryService.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Services\\CloudinaryService.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwDgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T13:25:56.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "BestSellingProducts.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\BestSellingProducts.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\BestSellingProducts.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\BestSellingProducts.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\BestSellingProducts.jsx",
-              "ViewState": "AQIAANcAAAAAAAAAAAAuwOQAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T06:47:49.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "SellerDashboard.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\SellerDashboard.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\SellerDashboard.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\SellerDashboard.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\SellerDashboard.jsx",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAQwCEAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T06:47:32.278Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 3,
               "Title": "ProductForm.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Product\\ProductForm.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Product\\ProductForm.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Product\\ProductForm.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Product\\ProductForm.jsx",
-              "ViewState": "AQIAANcAAAAAAAAAAAAuwPgAAAAAAAAA",
+              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\ProductDetails\\ProductForm.jsx",
+              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\Admin\\ProductDetails\\ProductForm.jsx",
+              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\ProductDetails\\ProductForm.jsx",
+              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\Admin\\ProductDetails\\ProductForm.jsx",
+              "ViewState": "AQIAAOwAAAAAAAAAAAAAAPgAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T06:03:09.485Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "SellerDashboardRepository.cs",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\SellerDashboardRepository.cs",
-              "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Repository\\SellerDashboardRepository.cs",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\SellerDashboardRepository.cs",
-              "RelativeToolTip": "ShopSiloAppFSD.Server\\Repository\\SellerDashboardRepository.cs",
-              "ViewState": "AQIAALwAAAAAAAAAAAAswAsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T06:54:48.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "Leaderboard.css",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\Leaderboard.css",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\Leaderboard.css",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\Leaderboard.css",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\Leaderboard.css",
-              "ViewState": "AQIAAFoAAAAAAAAAAIBJwG4AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-03T06:44:43.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "Leaderboard.jsx",
-              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\Leaderboard.jsx",
-              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\Leaderboard.jsx",
-              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\Leaderboard.jsx",
-              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\seller\\Home\\Dashboard\\Leaderboard.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-03T06:42:11.289Z",
+              "WhenOpened": "2024-10-06T15:29:59.521Z",
               "EditorCaption": ""
             }
           ]

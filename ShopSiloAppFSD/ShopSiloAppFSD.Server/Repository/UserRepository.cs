@@ -31,7 +31,7 @@ namespace ShopSiloAppFSD.Repository
 
             if (!string.IsNullOrEmpty(_userId))
             {
-                _user = _context.Users.FirstOrDefault(u => u.Username == _userId); // Or await FindAsync for async
+                _user = _context.Users.FirstOrDefault(u => (u.Username == _userId || u.Email == _userId)); // Or await FindAsync for async
             }
         }
 
@@ -176,6 +176,28 @@ namespace ShopSiloAppFSD.Repository
                 if (user == null)
                 {
                     throw new NotFoundException($"User with ID {userId} not found.");
+                }
+
+                return user;
+            }
+            catch (NotFoundException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new RepositoryException("Error retrieving user by ID.", ex);
+            }
+        }
+
+        public async Task<User> GetLoggedUserAsync()
+        {
+            try
+            {
+                var user = await _context.Users.FirstOrDefaultAsync(u => (u.Username == _userId || u.Email == _userId));
+                if (user == null)
+                {
+                    throw new NotFoundException($"User with ID {user.UserID} not found.");
                 }
 
                 return user;

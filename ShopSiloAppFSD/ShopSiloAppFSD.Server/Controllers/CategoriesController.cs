@@ -138,6 +138,14 @@ namespace ShopSiloAppFSD.Controllers
         }
 
         [AllowAnonymous]
+        [HttpGet("Subcategories/{parentCategoryId}")]
+        public async Task<IActionResult> GetSubcategories(int parentCategoryId)
+        {
+            var subcategories = await _categoryRepository.GetSubcategoriesAsync(parentCategoryId);
+            return Ok(subcategories);
+        }
+
+        [AllowAnonymous]
         [HttpGet("names")]
         public async Task<IActionResult> GetAllCategoryNames()
         {

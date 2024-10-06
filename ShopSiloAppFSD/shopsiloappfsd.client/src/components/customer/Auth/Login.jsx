@@ -68,7 +68,7 @@ const Login = () => {
                                 />
                             </div>
                             <div className="flex justify-end">
-                                <Link to="/forgot-password" className="text-sm text-spacecadet hover:underline font-semibold">Forgot Password?</Link>
+                                <Link to="/customer/forgot-password" className="text-sm text-spacecadet hover:underline font-semibold">Forgot Password?</Link>
                             </div>
                             {error && <p className="text-red-500 mt-4">{error}</p>}
                             <button
@@ -79,7 +79,7 @@ const Login = () => {
                             </button>
                         </form>
                         <p className="text-sm text-center mt-6 text-spacecadet font-semibold">
-                            Don't have an account? <Link to="/register" className="text-utorange hover:underline font-bold">Register here</Link>
+                            Don't have an account? <Link to="/customer/register" className="text-utorange hover:underline font-bold">Register here</Link>
                         </p>
                     </div>
                 </div>

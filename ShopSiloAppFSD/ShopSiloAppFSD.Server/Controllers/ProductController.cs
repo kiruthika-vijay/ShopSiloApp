@@ -268,6 +268,17 @@ namespace ShopSiloAppFSD.Controllers
             }
         }
 
+        [HttpGet("Category/{parentCategoryId}")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductsByCategory(int parentCategoryId)
+        {
+            var products = await _productRepository.GetProductsByParentCategoryIdAsync(parentCategoryId);
+            if (products == null || !products.Any())
+            {
+                return NotFound("No products found for this category.");
+            }
+            return Ok(products);
+        }
+
         // GET: api/Product/TopRated/{limit}
         [AllowAnonymous]
         [HttpGet("TopRated/{limit}")]

@@ -44,28 +44,7 @@ const ForgotPassword = () => {
 
     return (
         <div className="h-screen flex flex-col bg-lightjasmine">
-            {/* Navbar */}
-            <nav className="bg-white shadow-md py-4">
-                <div className="container mx-auto px-6 flex justify-between items-center">
-                    {/* Logo */}
-                    <div>
-                        <Link to="/">
-                            <img
-                                src="/images/ShopSilo.png"
-                                alt="ShopSilo Logo"
-                                className="h-10 w-auto" // Adjust the height as needed
-                            />
-                        </Link>
-                    </div>
-
-                    {/* Navigation Links */}
-                    <div>
-                        <Link to="/customer/login" className="text-spacecadet hover:text-darkjasmine px-4 text-xl font-bold">Login</Link>
-                        <Link to="/customer/register" className="text-spacecadet hover:text-darkjasmine px-4 text-xl font-bold">Register</Link>
-                    </div>
-                </div>
-            </nav>
-
+            
             {/* Content */}
             <div className="flex-grow flex justify-center items-center">
                 <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">

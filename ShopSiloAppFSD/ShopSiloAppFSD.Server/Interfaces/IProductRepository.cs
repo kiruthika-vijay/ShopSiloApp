@@ -14,6 +14,7 @@ namespace ShopSiloAppFSD.Interfaces
         Task ToggleProductStatusAsync(int productId);
         Task<IEnumerable<Product>> SearchProductsAsync(string searchTerm);
         Task<IEnumerable<ProductDisplayDto>> GetProductsByCategoryAsync(int? categoryId, string categoryName);
+        Task<IEnumerable<Product>> GetProductsByParentCategoryIdAsync(int parentCategoryId);
         Task<IEnumerable<Product>> GetTopRatedProductsAsync(int limit);
         Task UpdateStockQuantityAsync(int productId);
         Task<IEnumerable<Product>> GetProductsBySellerAsync(int sellerId);

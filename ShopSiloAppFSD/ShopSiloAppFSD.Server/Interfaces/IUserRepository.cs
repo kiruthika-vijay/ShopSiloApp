@@ -9,6 +9,7 @@ namespace ShopSiloAppFSD.Interfaces
         Task UpdateUserAsync(User user);
         Task DeleteUserAsync(int userId);
         Task<User> GetUserByIdAsync(int userId);
+        Task<User> GetLoggedUserAsync();
         Task<IEnumerable<User>> GetAllUsersAsync();
         Task<User> AuthenticateUserAsync(string identifier, string password);
         Task ChangePasswordAsync(int userId, string newPassword);

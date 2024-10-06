@@ -44,6 +44,7 @@ import AdminProductList from './components/Admin/ProductDetails/AdminProductList
 import EditProductForm from './components/seller/Home/Product/EditProductForm';
 import OrderView from './components/seller/Home/Order/OrderView';
 import AdminLogin from './components/Admin/Auth/AdminLogin';
+import CategoryBrowseProducts from './components/customer/Home/Categories/CategoryBrowseProducts';
 
 const CustomerLayout = () => (
     <CountProvider>
@@ -67,13 +68,13 @@ const App = () => {
 
             <Route path="/customer/login" element={<Login />} />
             <Route path="/customer/register" element={<Register />} />
-
             <Route path="/customer" element={<CustomerLayout />}>
                 {/* Default route for /customer */}
-                <Route index element={<HomePage />} />
+                <Route index element={<HomePage />} />  
                 <Route path="home" element={<HomePage />} />
                 <Route path="product/:productId" element={<ProductDescriptionPage />} />
                 <Route path="categories/:categoryId" element={<CategoryProducts />} />
+                <Route path="browse-categories/:categoryId" element={<CategoryBrowseProducts />} />
                 <Route path="search" element={<SearchResults />} />
                 <Route path="products" element={<AllProducts />} />
                 <Route path="suggestions" element={<Suggestions />} />

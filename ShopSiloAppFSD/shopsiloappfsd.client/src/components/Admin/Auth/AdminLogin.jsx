@@ -78,12 +78,6 @@ const AdminLogin = () => {
                         </p>
                     </div>
 
-                    <div className="flex items-center justify-between">
-                        <Link to="/forgot-password" className="text-sm text-blue-600 hover:text-blue-500">
-                            Forgot your password?
-                        </Link>
-                    </div>
-
                     {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
                     <div>

@@ -9,6 +9,7 @@ using ShopSiloAppFSD.Models;
 using ShopSiloAppFSD.Repository;
 using ShopSiloAppFSD.Server.DTO;
 using ShopSiloAppFSD.Server.Interfaces;
+using ShopSiloAppFSD.Server.Models.Payment;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -24,10 +25,11 @@ public class PaymentController : ControllerBase
     private readonly ISellerRepository _sellerRepository;
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IAuditLogConfiguration _auditLogConfig;
+    private readonly IEmailNotificationService _emailService;
     private readonly string? _userId;
     private readonly User? _user;
 
-    public PaymentController(ShopSiloDBContext context, IConfiguration configuration, IPaymentRepository paymentRepository, IHttpContextAccessor httpContextAccessor, IAuditLogConfiguration auditLogConfig, IOrderRepository orderRepository, ISellerRepository sellerRepository)
+    public PaymentController(ShopSiloDBContext context, IConfiguration configuration, IPaymentRepository paymentRepository, IHttpContextAccessor httpContextAccessor, IAuditLogConfiguration auditLogConfig, IOrderRepository orderRepository, ISellerRepository sellerRepository, IEmailNotificationService emailService)
     {
         _context = context;
         _configuration = configuration;
@@ -42,6 +44,7 @@ public class PaymentController : ControllerBase
         }
         _orderRepository = orderRepository;
         _sellerRepository = sellerRepository;
+        _emailService = emailService;
     }
 
     private string RazorpayKey => _configuration["Razorpay:ApiKey"];
@@ -230,7 +233,7 @@ public class PaymentController : ControllerBase
         };
 
         // Save the payment transaction and create the order
-        var (isSuccess, orderId) = await _paymentRepository.SavePaymentAndCreateOrderAsync(paymentTransaction, order);
+        var (isSuccess, orderId) = await _paymentRepository.SavePaymentAndCreateOrderAsync(paymentTransaction, order, paymentTransactionDto.OrderItems);
 
         if (!isSuccess)
         {
@@ -252,6 +255,9 @@ public class PaymentController : ControllerBase
         {
             return NotFound(new { Message = "Seller not found." });
         }
+
+        // Send confirmation email
+        await _emailService.SendOrderConfirmationEmail(user.Email, orderDetails, sellerDetails);
 
         // Return success response with order details
         return Ok(new

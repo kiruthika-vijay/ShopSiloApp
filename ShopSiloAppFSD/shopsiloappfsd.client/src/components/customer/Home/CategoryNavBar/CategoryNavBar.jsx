@@ -24,7 +24,7 @@ const CategoryNavbar = ({ categories }) => {
                     onMouseLeave={handleMouseLeave}
                 >
                     <Link
-                        to={`/api/Categories/${category.categoryID}`} // Link for the category
+                        to={`/customer/browse-categories/${category.categoryID}`} // Link for the category
                         className="flex justify-between items-center cursor-pointer p-3 text-gray-700 bg-gray-100 hover:bg-orange-100 rounded transition-all duration-300 ease-in-out"
                     >
                         <span className="font-medium">{category.categoryName}</span>

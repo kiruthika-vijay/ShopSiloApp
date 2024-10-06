@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSiloAppFSD.Server", "Sh
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "shopsiloappfsd.client", "shopsiloappfsd.client\shopsiloappfsd.client.esproj", "{9C28EA32-8827-498A-88FA-98BE82CE5791}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSiloApp.Tests", "ShopSiloApp.Tests\ShopSiloApp.Tests.csproj", "{BDD30A05-D96F-4788-9B7C-070279859EFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSiloApp.Tests", "ShopSiloApp.Tests\ShopSiloApp.Tests.csproj", "{FDAD69B4-7015-4C63-8311-8440BB6E7280}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,10 @@ Global
 		{9C28EA32-8827-498A-88FA-98BE82CE5791}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C28EA32-8827-498A-88FA-98BE82CE5791}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9C28EA32-8827-498A-88FA-98BE82CE5791}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{BDD30A05-D96F-4788-9B7C-070279859EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDD30A05-D96F-4788-9B7C-070279859EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDD30A05-D96F-4788-9B7C-070279859EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDD30A05-D96F-4788-9B7C-070279859EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDAD69B4-7015-4C63-8311-8440BB6E7280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDAD69B4-7015-4C63-8311-8440BB6E7280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDAD69B4-7015-4C63-8311-8440BB6E7280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDAD69B4-7015-4C63-8311-8440BB6E7280}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

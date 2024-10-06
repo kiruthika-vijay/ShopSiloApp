@@ -9,5 +9,6 @@ namespace ShopSiloAppFSD.Interfaces
         Task DeleteCategoryAsync(int categoryId);
         Task<Category> GetCategoryByIdAsync(int categoryId);
         Task<IEnumerable<Category>> GetAllCategoriesAsync();
+        Task<IEnumerable<Category>> GetSubcategoriesAsync(int parentCategoryId);
     }
 }

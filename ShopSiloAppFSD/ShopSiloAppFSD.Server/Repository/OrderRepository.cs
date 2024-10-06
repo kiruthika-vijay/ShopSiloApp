@@ -24,7 +24,6 @@ namespace ShopSiloAppFSD.Repository
         private readonly IAuditLogConfiguration _auditLogConfig;
         private readonly IEmailServiceConfiguration _emailSeviceConfig;
         private readonly string _userId;
-        private readonly User _user;
         public OrderRepository(ShopSiloDBContext context, IHttpContextAccessor httpContextAccessor, IAuditLogConfiguration auditLogConfig, IEmailServiceConfiguration emailServiceConfig, IEmailNotificationService emailService)
         {
             _context = context;
@@ -33,17 +32,13 @@ namespace ShopSiloAppFSD.Repository
             _emailSeviceConfig = emailServiceConfig;
             _emailService = emailService;
             _userId = _httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-            if (!string.IsNullOrEmpty(_userId))
-            {
-                _user = _context.Users.FirstOrDefault(u => u.Username == _userId);
-            }
         }
 
         public async Task PlaceOrderAsync(Order order)
         {
             try
             {
+                // Update inventory and process order items
                 foreach (var item in order.OrderItems)
                 {
                     var inventory = await _context.Inventories.FirstOrDefaultAsync(i => i.ProductID == item.ProductID);
@@ -60,52 +55,65 @@ namespace ShopSiloAppFSD.Repository
                 // Add the order to the database
                 _context.Orders.Add(order);
 
+                // Add the order items to the database
+                foreach (var item in order.OrderItems)
+                {
+                    item.OrderID = order.OrderID;  // Associate the order items with the order
+                    _context.OrderItems.Add(item);  // Assuming you have an OrderItems DbSet
+                }
+
                 await _context.SaveChangesAsync();
 
-                if (_emailSeviceConfig.IsEmailServiceEnabled)
-                {
-                    // Fetch Razorpay payment ID from PaymentTransaction model
-                    var paymentTransaction = await _context.Payments
-                    .FirstOrDefaultAsync(p => p.OrderID == order.OrderID);
+                // Send confirmation email and log audit
+                await SendOrderConfirmationEmail(order); // Extract email logic to a separate method for clarity
+                await LogAuditForOrder(order);
 
-                    // Check if FullName is null, fallback to "User" if it is
-                    var customerDetail = await _context.CustomerDetails.FirstOrDefaultAsync(c => c.CustomerID == order.UserID);
-                    var fullName = (customerDetail.FirstName) + " " + (customerDetail.LastName);
-                    string userName = string.IsNullOrEmpty(fullName) ? "User" : fullName;
-
-                    // Create email body with order details
-                    string emailBody = $@"
-                        <h1>Order Confirmation</h1>
-                        <p>Dear {fullName},</p>
-                        <p>Thank you for placing your order with us!</p>
-                        <p>Your Order ID is: <strong>{order.OrderID}</strong></p>
-                        <p>Payment ID: <strong>{paymentTransaction?.RazorpayPaymentId}</strong></p>
-                        <p>We will notify you once your order is shipped.</p>
-                        <p>Thank you for shopping with us!</p>
-                        <p>Sincerely, <br/> The ShopSilo Team</p>";
-
-                
-                    // Send order confirmation email
-                    _emailService.SendEmail(order.User.Email, "Order placed Confirmation", emailBody);
-                }
-
-                if (_auditLogConfig.IsAuditLogEnabled) // Check if audit log is enabled
-                {
-                    // Audit log entry
-                    AuditLog auditLog = new AuditLog()
-                    {
-                        Action = $"Order {order.OrderID} placed by {order.User.CustomerDetail.FirstName} {order.User.CustomerDetail.LastName}",
-                        Timestamp = DateTime.Now,
-                        UserId = _user.UserID
-                    };
-                    await _context.AuditLogs.AddAsync(auditLog);
-                }
-
+                // Final save to ensure audit logs are also persisted
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
+                // Handle any exceptions and log them appropriately
                 throw new RepositoryException("Error placing an order.", ex);
+            }
+        }
+
+        private async Task SendOrderConfirmationEmail(Order order)
+        {
+            if (_emailSeviceConfig.IsEmailServiceEnabled)
+            {
+                var paymentTransaction = await _context.Payments.FirstOrDefaultAsync(p => p.OrderID == order.OrderID);
+                var customerDetail = await _context.CustomerDetails.FirstOrDefaultAsync(c => c.CustomerID == order.UserID);
+                var fullName = $"{customerDetail?.FirstName} {customerDetail?.LastName}".Trim();
+                string userName = string.IsNullOrEmpty(fullName) ? "User" : fullName;
+
+                string emailBody = $@"
+            <h1>Order Confirmation</h1>
+            <p>Dear {userName},</p>
+            <p>Thank you for placing your order with us!</p>
+            <p>Your Order ID is: <strong>{order.OrderID}</strong></p>
+            <p>Payment ID: <strong>{paymentTransaction?.RazorpayPaymentId}</strong></p>
+            <p>We will notify you once your order is shipped.</p>
+            <p>Thank you for shopping with us!</p>
+            <p>Sincerely, <br/> The ShopSilo Team</p>";
+
+                // Send order confirmation email
+                _emailService.SendEmail(order.User.Email, "Order Confirmation", emailBody);
+            }
+        }
+
+        private async Task LogAuditForOrder(Order order)
+        {
+            if (_auditLogConfig.IsAuditLogEnabled)
+            {
+                AuditLog auditLog = new AuditLog()
+                {
+                    Action = $"Order {order.OrderID} placed by {order.User.CustomerDetail?.FirstName} {order.User.CustomerDetail?.LastName}",
+                    Timestamp = DateTime.Now,
+                    UserId = order.UserID
+                };
+
+                await _context.AuditLogs.AddAsync(auditLog);
             }
         }
 
@@ -115,6 +123,7 @@ namespace ShopSiloAppFSD.Repository
         {
             try
             {
+                var user = await _context.Users.FirstOrDefaultAsync(u => (u.Username == _userId || u.Email == _userId));
                 var existingOrder = await _context.Orders
                     .FirstOrDefaultAsync(o => o.OrderID == order.OrderID);
 
@@ -134,7 +143,7 @@ namespace ShopSiloAppFSD.Repository
                         {
                             Action = $"Order has been updated for Order {order.OrderID} placed by customer {(order.User.CustomerDetail.FirstName) + " " + (order.User.CustomerDetail.LastName)}",
                             Timestamp = DateTime.Now,
-                            UserId = _user.UserID
+                            UserId = user.UserID
                         };
                         await _context.AuditLogs.AddAsync(auditLog);
                     }
@@ -398,7 +407,7 @@ namespace ShopSiloAppFSD.Repository
                     {
                         Action = $"Order {orderId} cancelled by {order.User.CustomerDetail.FirstName} {order.User.CustomerDetail.LastName}",
                         Timestamp = DateTime.Now,
-                        UserId = _user.UserID
+                        UserId = user.UserID
                     };
                     await _context.AuditLogs.AddAsync(auditLog);
                 }

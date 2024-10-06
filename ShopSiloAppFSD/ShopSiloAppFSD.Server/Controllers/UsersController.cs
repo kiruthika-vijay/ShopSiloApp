@@ -65,6 +65,25 @@ namespace ShopSiloAppFSD.Controllers
             }
         }
 
+        // GET: api/Users/5
+        [HttpGet("/user")]
+        public async Task<ActionResult<User>> GetLoggedUser()
+        {
+            try
+            {
+                var user = await _userRepository.GetLoggedUserAsync();
+                return Ok(user);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (RepositoryException ex)
+            {
+                return StatusCode(500, "Internal server error occurred while retrieving the user.");
+            }
+        }
+
         // POST: api/Users
         [HttpPost]
         public async Task<ActionResult<User>> PostUser([FromBody] UserDto userDto)

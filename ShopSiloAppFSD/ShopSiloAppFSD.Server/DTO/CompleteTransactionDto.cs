@@ -1,4 +1,5 @@
-﻿using ShopSiloAppFSD.Enums;
+﻿using ShopSiloAppFSD.DTO;
+using ShopSiloAppFSD.Enums;
 
 namespace ShopSiloAppFSD.Server.DTO
 {
@@ -12,6 +13,9 @@ namespace ShopSiloAppFSD.Server.DTO
         public int ShippingAddressID { get; set; }
         public int BillingAddressID { get; set; }
         public int SellerID { get; set; }
+
+        // Add a list of order items
+        public List<OrderItemDto> OrderItems { get; set; } = new List<OrderItemDto>();
     }
 
 }

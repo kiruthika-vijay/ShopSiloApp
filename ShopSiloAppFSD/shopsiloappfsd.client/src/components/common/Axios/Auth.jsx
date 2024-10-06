@@ -58,7 +58,6 @@ export const isAuthenticated = () => {
 export const getEmailFromToken = (token) => {
     const decodedToken = decodeToken(token);
     const email = decodedToken.email; // Adjust according to your JWT claim structure
-    console.log(email);
     return email;
 };
 
@@ -93,8 +92,8 @@ export const fetchUserId = async () => {
 
         if (userArray && userArray.length > 0) {
             const loggedUserId = userArray[0].userID; // Access the first item in the array
-            console.log("User ID: ", loggedUserId);
             storeUserId(loggedUserId); // Store the userID
+            return loggedUserId;
         } else {
             console.error("User not found or empty response.");
         }

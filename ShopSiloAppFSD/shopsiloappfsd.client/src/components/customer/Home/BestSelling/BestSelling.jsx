@@ -110,7 +110,7 @@ const BestSellingProducts = ({ products = [] }) => {
 
                                     {/* Product Image */}
                                     <img
-                                        src={product.ImageURL}
+                                        src={product.imageURL}
                                         alt={product.productName}
                                         className="w-full h-48 object-cover"
                                     />

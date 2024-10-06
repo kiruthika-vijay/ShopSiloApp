@@ -27,7 +27,6 @@
     <Folder Include="src\components\customer\Home\WishList\" />
     <Folder Include="src\components\customer\Home\ServiceSection\" />
     <Folder Include="src\components\customer\Home\PromotionalBanner\" />
-    <Folder Include="src\components\customer\CustomerLayout\" />
     <Folder Include="src\components\customer\Order\" />
     <Folder Include="src\components\customer\Product\" />
     <Folder Include="src\components\AuditLog\" />

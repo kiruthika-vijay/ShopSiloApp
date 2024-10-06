@@ -62,7 +62,6 @@ const AllProducts = () => {
                                     <p className="text-sm text-gray-500 line-through">&#8377;{product.discountedPrice}</p>
                                 )}
                                 <p className="text-sm text-gray-500">{product.description}</p>
-                                <p className="text-sm text-gray-500">Stock: {product.stockQuantity}</p>
                             </div>
                             <div className="flex justify-between items-center p-4 border-t">
                                 <button

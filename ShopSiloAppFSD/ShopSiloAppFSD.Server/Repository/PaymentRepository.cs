@@ -13,10 +13,11 @@ public class PaymentRepository : IPaymentRepository
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IAuditLogConfiguration _auditLogConfig;
     private readonly IOrderService _orderService;
+    private readonly IOrderRepository _orderRepository;
     private readonly string? _userId;
     private readonly User? _user;
 
-    public PaymentRepository(ShopSiloDBContext context, IHttpContextAccessor httpContextAccessor, IAuditLogConfiguration auditLogConfig, IOrderService orderService)
+    public PaymentRepository(ShopSiloDBContext context, IHttpContextAccessor httpContextAccessor, IAuditLogConfiguration auditLogConfig, IOrderService orderService, IOrderRepository orderRepository)
     {
         _context = context;
         _httpContextAccessor = httpContextAccessor;
@@ -28,6 +29,7 @@ public class PaymentRepository : IPaymentRepository
         {
             _user = _context.Users.FirstOrDefault(u => u.Username == _userId);
         }
+        _orderRepository = orderRepository;
     }
 
     // Fetch payment transactions by user ID
@@ -67,7 +69,7 @@ public class PaymentRepository : IPaymentRepository
 
 
     // Save payment transaction and create order
-    public async Task<(bool, int)> SavePaymentAndCreateOrderAsync(PaymentTransaction transaction, Order order)
+    public async Task<(bool, int)> SavePaymentAndCreateOrderAsync(PaymentTransaction transaction, Order order, List<OrderItemDto> orderItems)
     {
         // Ensure there's no active transaction
         if (_context.Database.CurrentTransaction != null)
@@ -84,7 +86,7 @@ public class PaymentRepository : IPaymentRepository
         try
         {
             // Save the order first
-            var orders = await _context.Orders.AddAsync(order);
+            var orders = _context.Orders.AddAsync(order);
             Console.Write(orders);
             await _context.SaveChangesAsync(); // Save to get the generated OrderID
 
@@ -94,6 +96,22 @@ public class PaymentRepository : IPaymentRepository
             // Save the payment transaction
             await _context.Payments.AddAsync(transaction);
             await _context.SaveChangesAsync();
+
+            // Now save the order items
+            foreach (var item in orderItems)
+            {
+                var orderItem = new OrderItem
+                {
+                    OrderID = order.OrderID,
+                    ProductID = item.ProductID,
+                    Quantity = item.Quantity,
+                    Price = item.Price,
+                    // Add any additional properties if required
+                };
+                await _context.OrderItems.AddAsync(orderItem);
+            }
+            await _context.SaveChangesAsync(); // Save order items
+
 
             // Commit the transaction
             await transactionScope.CommitAsync();

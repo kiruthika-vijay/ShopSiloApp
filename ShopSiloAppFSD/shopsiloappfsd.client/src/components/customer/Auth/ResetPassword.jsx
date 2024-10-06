@@ -64,7 +64,7 @@ const ResetPassword = () => {
                     <div>
                         <Link to="/">
                             <img
-                                src="/images/ShopSilo.png"
+                                src="/images/shopSiloLogo.png"
                                 alt="ShopSilo Logo"
                                 className="h-10 w-auto" // Adjust the height as needed
                             />
@@ -73,8 +73,8 @@ const ResetPassword = () => {
 
                     {/* Navigation Links */}
                     <div>
-                        <Link to="/customer/login" className="text-spacecadet hover:text-darkjasmine px-4 text-xl font-bold">Login</Link>
-                        <Link to="/customer/register" className="text-spacecadet hover:text-darkjasmine px-4 text-xl font-bold">Register</Link>
+                        <Link to="/customer/login" className="text-spacecadet hover:text-darkjasmine px-4 text-l font-bold">Login</Link>
+                        <Link to="/customer/register" className="text-spacecadet hover:text-darkjasmine px-4 text-l font-bold">Register</Link>
                     </div>
                 </div>
             </nav>

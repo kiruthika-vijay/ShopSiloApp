@@ -21,7 +21,7 @@ const NewArrivals = ({ products = [] }) => {
                 <div className="relative w-full h-64">
                     {products.length > 0 && (
                         <img
-                            src={products[0].imageURL || defaultImages[0]} // Use default image if none exists
+                            src={products[0].imageURL} // Use default image if none exists
                             alt={products[0].productName}
                             className="w-full h-full object-cover"
                         />

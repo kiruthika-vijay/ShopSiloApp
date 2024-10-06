@@ -27,10 +27,8 @@ namespace ShopSiloAppFSD.Services
 
         public async Task<byte[]> GenerateInvoicePdfAsync(int orderId)
         {
-            // Set culture to "en-IN" for Indian formatting
             CultureInfo indianCulture = new CultureInfo("en-IN");
 
-            // Fetch the order, including customer and order items
             var order = await _context.Orders
                 .Include(o => o.User)
                 .Include(o => o.OrderItems)
@@ -49,17 +47,40 @@ namespace ShopSiloAppFSD.Services
                 Document document = new Document(pdf);
 
                 // Add company logo
-                var logoPath = "D:\\HEXA-SEGUE 201 - .NET FSD\\ShopSiloAPP - CASE STUDY\\ShopSilo.png"; // Path to your logo
+                var logoPath = "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\public\\images\\shopSiloLogo.png";
                 ImageData logoImage = ImageDataFactory.Create(logoPath);
-                Image logo = new Image(logoImage).ScaleAbsolute(100, 50);
-                document.Add(logo.SetFixedPosition(50, 750));
+                Image logo = new Image(logoImage).ScaleAbsolute(80, 30); // Smaller size for better alignment
 
-                // Add invoice title
+                // Create a table for the header section
+                Table headerTable = new Table(2);
+                headerTable.SetWidth(UnitValue.CreatePercentValue(100));
+
+                // Add logo in the first cell
+                Cell logoCell = new Cell().Add(logo).SetBorder(Border.NO_BORDER);
+                logoCell.SetVerticalAlignment(VerticalAlignment.MIDDLE);
+                headerTable.AddCell(logoCell);
+
+                // Add company name and details in the second cell
+                Cell companyDetailsCell = new Cell().Add(new Paragraph("ShopSilo E-commerce Pvt Ltd")
+                    .SetFontSize(14)
+                    .SetBold())
+                    .Add(new Paragraph("Address: 1234, Business Park, Bangalore, India")
+                    .SetFontSize(10))
+                    .Add(new Paragraph("Phone: +91 9876543210 | Email: support@shopsilo.com")
+                    .SetFontSize(10))
+                    .SetTextAlignment(TextAlignment.RIGHT)
+                    .SetBorder(Border.NO_BORDER);
+                headerTable.AddCell(companyDetailsCell);
+
+                // Add the header table to the document
+                document.Add(headerTable);
+
+                // Invoice title
                 document.Add(new Paragraph("INVOICE")
                     .SetTextAlignment(TextAlignment.CENTER)
-                    .SetFontSize(24)
+                    .SetFontSize(20)
                     .SetBold()
-                    .SetMarginTop(20));
+                    .SetMarginTop(10));
 
                 // Add Invoice Number and Date
                 document.Add(new Paragraph($"Invoice No: INV-{order.OrderID:0000}")
@@ -78,7 +99,6 @@ namespace ShopSiloAppFSD.Services
                     .SetBold()
                     .SetFontSize(12)
                     .SetMarginTop(20));
-
                 document.Add(new Paragraph($"Customer Name: {fullName}")
                     .SetFontSize(12));
                 document.Add(new Paragraph($"Email: {order.User.Email}")

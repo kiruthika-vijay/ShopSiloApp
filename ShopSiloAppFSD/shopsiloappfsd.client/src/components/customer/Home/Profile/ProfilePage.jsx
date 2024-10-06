@@ -13,12 +13,13 @@ import {
     FaTimes
 } from 'react-icons/fa';
 import './ProfilePage.css';
-import { apiClient, getToken } from '../../../common/Axios/auth';
+import { apiClient, fetchUserId, getToken, getUserId } from '../../../common/Axios/auth';
 import EditProfileModal from './EditProfileModal';
 import AddressModal from './AddressModal';
 import Toggle from 'react-toggle';  // For the toggle switches
 import 'react-toggle/style.css';    // For toggle styling
 import ChangePasswordModal from './ChangePasswordModal';
+import CustomerDetailsForm from './CustomerDetailsForm';
 
 const ProfilePage = () => {
     const [token, setToken] = useState(null);
@@ -34,13 +35,25 @@ const ProfilePage = () => {
     const [addressModalOpen, setAddressModalOpen] = useState(false);
     const [changePasswordModalOpen, setChangePasswordModalOpen] = useState(false);
     const [editData, setEditData] = useState(null);
-
+    const [showCustomerForm, setShowCustomerForm] = useState(false);
+    const [userId, setUserId] = useState(null);
 
     useEffect(() => {
-        const token = getToken();
+        const token = getToken();  // Assuming getToken() is a function that retrieves the token
         setToken(token);
-        fetchAllData(token);
-    }, []);
+
+        const loadUserIdAndData = async () => {
+            const userId = await fetchUserId();  // Wait for the user ID to be fetched
+            setUserId(userId);  // Set the userId state
+            if (userId) {
+                await fetchAllData(token);  // Fetch data once userId is available
+            }
+        };
+
+        loadUserIdAndData();  // Call the async function
+
+    }, []);  // Empty dependency array to run on component mount
+
 
     const fetchAllData = async (token) => {
         setLoading(true);
@@ -52,18 +65,28 @@ const ProfilePage = () => {
                 apiClient.get('/Payment/userpayments', { headers: { Authorization: `Bearer ${token}` } }),
                 apiClient.get('/Wishlists', { headers: { Authorization: `Bearer ${token}` } }),
             ]);
-            setUser(profileResponse.data.$values[0]);
-            console.log(profileResponse.data.$values[0]);
-            setAddresses(profileResponse.data.$values[0].addresses.$values || []);
-            setOrders(ordersResponse.data.$values || []);
-            setPayments(paymentsResponse.data.$values);
-            setWishlist(wishlistResponse.data.$values || []);
+            const userData = profileResponse.data.$values[0];
+
+            if (!userData) {
+                setShowCustomerForm(true); // Show form if no details exist
+            } else {
+                setUser(userData);
+                setAddresses(profileResponse.data.$values[0].addresses.$values || []);
+                setOrders(ordersResponse.data.$values || []);
+                setPayments(paymentsResponse.data.$values);
+                setWishlist(wishlistResponse.data.$values || []);
+            }
         } catch (err) {
             console.error('Error fetching data:', err);
             setError('Failed to fetch data');
         } finally {
             setLoading(false);
         }
+    };
+
+    // Callback for closing modal and refetching details
+    const handleAddForm = () => {
+        setIsModalOpen(false);
     };
 
     const handleEditProfile = (data) => {
@@ -404,9 +427,11 @@ const ProfilePage = () => {
                                             </button>
                                         )}
 
-                                        <button className="download-invoice-btn" onClick={() => handleDownloadInvoice(order.orderID)}>
-                                            <FaDownload className="mr-3" /> Download Invoice
-                                        </button>
+                                        {order.orderStatus !== 'Pending' && order.orderStatus !== 'Cancelled' && order.orderStatus !== 'Shipped' && order.orderStatus !== 'Processing' && (
+                                            <button className="download-invoice-btn" onClick={() => handleDownloadInvoice(order.orderID)}>
+                                                <FaDownload className="mr-3" /> Download Invoice
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                             ))
@@ -479,7 +504,9 @@ const ProfilePage = () => {
     return (
         <div className="profile-page">
             <div className="profile-header">
-                <FaUserCircle className="profile-icon" size={120} />
+                <span className="rounded-full">
+                    <img src="https://avatar.iran.liara.run/public" alt="User" className="profile-icon" size={120} />
+                </span>
                 <div className="profile-details">
                     <h1 className="font-bold text-orange-500 text-xl">{user.firstName} {user.lastName}</h1>
                     <p><strong>Email: </strong>{user.user.email}</p>
@@ -526,6 +553,17 @@ const ProfilePage = () => {
             {changePasswordModalOpen && (
                 <ChangePasswordModal onClose={() => setChangePasswordModalOpen(false)} title="Change Password" oldPassword={user.user.password} />
             )}
+
+            {showCustomerForm && userId && (
+                <CustomerDetailsForm
+                    token={token}
+                    userId={userId}  // Pass the fetched userId here
+                    onSubmit={handleAddForm}
+                    open={true}  // Control modal visibility
+                    handleClose={() => setShowCustomerForm(false)}
+                />
+            )}
+
         </div>
     );
 };

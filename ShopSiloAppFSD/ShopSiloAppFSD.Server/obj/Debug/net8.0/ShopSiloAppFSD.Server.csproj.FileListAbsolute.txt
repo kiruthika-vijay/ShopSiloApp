@@ -279,3 +279,8 @@ D:\HEXA-SEGUE 201 - .NET FSD\FullStackSHOPSILO\ShopSiloAppFSD\ShopSiloAppFSD.Ser
 D:\HEXA-SEGUE 201 - .NET FSD\FullStackSHOPSILO\ShopSiloAppFSD\ShopSiloAppFSD.Server\obj\Debug\net8.0\ShopSiloAppFSD.Server.pdb
 D:\HEXA-SEGUE 201 - .NET FSD\FullStackSHOPSILO\ShopSiloAppFSD\ShopSiloAppFSD.Server\obj\Debug\net8.0\ShopSiloAppFSD.Server.genruntimeconfig.cache
 D:\HEXA-SEGUE 201 - .NET FSD\FullStackSHOPSILO\ShopSiloAppFSD\ShopSiloAppFSD.Server\obj\Debug\net8.0\ref\ShopSiloAppFSD.Server.dll
+D:\HEXA-SEGUE 201 - .NET FSD\FullStackSHOPSILO\ShopSiloAppFSD\ShopSiloAppFSD.Server\bin\Debug\net8.0\EPPlus.dll
+D:\HEXA-SEGUE 201 - .NET FSD\FullStackSHOPSILO\ShopSiloAppFSD\ShopSiloAppFSD.Server\bin\Debug\net8.0\EPPlus.Interfaces.dll
+D:\HEXA-SEGUE 201 - .NET FSD\FullStackSHOPSILO\ShopSiloAppFSD\ShopSiloAppFSD.Server\bin\Debug\net8.0\EPPlus.System.Drawing.dll
+D:\HEXA-SEGUE 201 - .NET FSD\FullStackSHOPSILO\ShopSiloAppFSD\ShopSiloAppFSD.Server\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\HEXA-SEGUE 201 - .NET FSD\FullStackSHOPSILO\ShopSiloAppFSD\ShopSiloAppFSD.Server\bin\Debug\net8.0\System.Formats.Asn1.dll

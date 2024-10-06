@@ -229,23 +229,43 @@ namespace ShopSiloAppFSD.Repository
             try
             {
                 // Assuming you have a method to get products based on category ID
-                return await _context.Products
-                    .Where(p => p.CategoryID == categoryId && p.IsActive) // Filter by category and active status
-                    .Select(p => new ProductDisplayDto
-                    {
-                        ProductID = p.ProductID,
-                        ProductName = p.ProductName,
-                        Description = p.Description,
-                        Price = p.Price,
-                        DiscountedPrice = p.DiscountedPrice,
-                        StockQuantity = p.StockQuantity,
-                        ImageURL = p.ImageURL
-                    }).ToListAsync();
+                var categoryProducts = await _context.Products
+                                        .Where(p => p.CategoryID == categoryId && p.IsActive) // Filter by category and active status
+                                        .Select(p => new ProductDisplayDto
+                                        {
+                                            ProductID = p.ProductID,
+                                            ProductName = p.ProductName,
+                                            Description = p.Description,
+                                            Price = p.Price,
+                                            DiscountedPrice = p.DiscountedPrice,
+                                            StockQuantity = p.StockQuantity,
+                                            ImageURL = p.ImageURL
+                                        }).ToListAsync();
+                return categoryProducts;
             }
             catch (Exception ex)
             {
                 throw new RepositoryException("Error retrieving products by category.", ex);
             }
+        }
+
+        public async Task<IEnumerable<Product>> GetProductsByParentCategoryIdAsync(int parentCategoryId)
+        {
+            // Fetch all subcategories under the specified parent category
+            var subCategories = await _context.Categories
+                .Where(c => c.ParentCategoryId == parentCategoryId)
+                .Select(c => c.CategoryID) // Select only the Category IDs
+                .ToListAsync();
+
+            if (!subCategories.Any())
+            {
+                return Enumerable.Empty<Product>(); // Return an empty collection if no subcategories are found
+            }
+
+            // Fetch all products belonging to the fetched subcategories
+            return await _context.Products
+                .Where(p => subCategories.Contains(p.CategoryID)) // Filter by Category IDs (assuming products have a CategoryId)
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<Product>> GetTopRatedProductsAsync(int limit)

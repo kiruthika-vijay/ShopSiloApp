@@ -258,8 +258,9 @@ const ShoppingCart = () => {
                     amount: totalAmount.toFixed(2) || 0, // Replace with your method to get the cart total
                     paymentStatus: 'Success', // Set appropriate status
                     shippingAddressID: shippingAddressId, // Get shipping address ID
-                    billingAddressID: billingAddressId, // Get billing address ID
-                    sellerID: cartItemSellerId // Get seller ID if applicable
+                    billingAddressID: billingAddressId || shippingAddressId, // Get billing address ID
+                    sellerID: cartItemSellerId, // Get seller ID if applicable
+                    orderItems: cartItems, // Include order items here
                 };
                 console.log(paymentTransactionData);
                 // Complete the payment and create the order

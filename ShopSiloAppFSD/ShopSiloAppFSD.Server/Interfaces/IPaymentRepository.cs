@@ -7,6 +7,6 @@ namespace ShopSiloAppFSD.Server.Interfaces
     {
         Task<IEnumerable<PaymentTransaction>> GetPaymentTransactionsByUserIdAsync(int userId);
         Task<IEnumerable<PaymentTransactionDto>> GetPaymentTransactionsByLoggedUserAsync();
-        Task<(bool, int)> SavePaymentAndCreateOrderAsync(PaymentTransaction transaction, Order order);
+        Task<(bool, int)> SavePaymentAndCreateOrderAsync(PaymentTransaction transaction, Order order, List<OrderItemDto> orderItems);
     }
 }

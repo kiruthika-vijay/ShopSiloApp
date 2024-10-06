@@ -1,4 +1,13 @@
 import {
+    GiSofa,
+    GiFruitBowl,
+    GiWhiteBook
+} from "react-icons/gi";
+import { PiDevicesFill } from "react-icons/pi";
+import {
+    FaFootballBall,
+    FaGamepad,
+    FaCar,
     FaKeyboard,
     FaLaptop,
     FaMobileAlt,
@@ -19,14 +28,16 @@ import {
     FaSmile,
     FaPaintBrush,
     FaHeartbeat,
-    FaBasketballBall,
-    FaBook,
-    FaBookOpen,
-    FaBookReader,
     FaQuestionCircle, // Default icon
 } from 'react-icons/fa';
 
 const iconMap = {
+    PiDevicesFill,
+    GiSofa,
+    FaFootballBall,
+    FaGamepad,
+    FaCar,
+    GiFruitBowl,
     FaKeyboard,
     FaLaptop,
     FaMobileAlt,
@@ -47,10 +58,7 @@ const iconMap = {
     FaSmile,
     FaPaintBrush,
     FaHeartbeat,
-    FaBasketballBall,
-    FaBook,
-    FaBookOpen,
-    FaBookReader,
+    GiWhiteBook
 };
 
 export const getIcon = (iconName) => {

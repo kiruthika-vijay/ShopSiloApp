@@ -101,7 +101,7 @@ const Categories = () => {
                         <div
                             key={category.categoryID} // Adjusted to match the response
                             className="categorybox flex-shrink-0 w-40 h-40 bg-white border rounded-lg shadow-md flex flex-col items-center justify-center transition-transform transform hover:scale-105 hover:bg-orange-600 cursor-pointer relative group"
-                            onClick={() => navigate(`/customer/categories/${category.categoryID}`)} // Adjusted to match the response
+                            onClick={() => navigate(`/customer/browse-categories/${category.categoryID}`)} // Adjusted to match the response
                         >
                             <div className="text-4xl text-gray-700 group-hover:text-white transition-colors">
                                 {React.createElement(getIcon(category.icon))} {/* Use getIcon to render icon */}
