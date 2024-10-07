@@ -186,6 +186,7 @@ const Wishlist = () => {
             <section className="mt-10">
                 <div className="flex justify-between items-center mb-4">
                     <h2 className="text-xl font-bold">Just for You</h2>
+
                     <Link to="/suggestions">
                         <button className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition-colors">
                            View All
@@ -208,7 +209,7 @@ const Wishlist = () => {
 
                                     {/* Product Image */}
                                     <img
-                                        src={suggestion.imageUrl}
+                                        src={suggestion.imageURL}
                                         alt={suggestion.productName}
                                         className="w-full h-48 object-cover rounded-lg"
                                     />

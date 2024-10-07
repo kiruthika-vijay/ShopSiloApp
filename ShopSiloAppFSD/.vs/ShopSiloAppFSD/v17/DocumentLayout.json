@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\customer\\home\\wishlist\\wishlist.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\customer\\home\\wishlist\\wishlist.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.client\\src\\components\\customer\\home\\wishlist\\suggestionproducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9C28EA32-8827-498A-88FA-98BE82CE5791}|shopsiloappfsd.client\\shopsiloappfsd.client.esproj|solutionrelative:shopsiloappfsd.client\\src\\components\\customer\\home\\wishlist\\suggestionproducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|d:\\hexa-segue 201 - .net fsd\\fullstackshopsilo\\shopsiloappfsd\\shopsiloappfsd.server\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9E45618-877F-44EE-BD5B-3BC496C6592B}|ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj|solutionrelative:shopsiloappfsd.server\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -47,19 +55,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Wishlist.jsx",
+              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Home\\WishList\\Wishlist.jsx",
+              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\customer\\Home\\WishList\\Wishlist.jsx",
+              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Home\\WishList\\Wishlist.jsx",
+              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\customer\\Home\\WishList\\Wishlist.jsx",
+              "ViewState": "AQIAAJ8AAAAAAAAAAAAswLkAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-07T09:26:56.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SuggestionProducts.jsx",
+              "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Home\\WishList\\SuggestionProducts.jsx",
+              "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\customer\\Home\\WishList\\SuggestionProducts.jsx",
+              "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\customer\\Home\\WishList\\SuggestionProducts.jsx",
+              "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\customer\\Home\\WishList\\SuggestionProducts.jsx",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEIAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-07T09:25:58.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "InvoiceService.cs",
               "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Services\\InvoiceService.cs",
               "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Services\\InvoiceService.cs",
               "ToolTip": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Services\\InvoiceService.cs",
               "RelativeToolTip": "ShopSiloAppFSD.Server\\Services\\InvoiceService.cs",
-              "ViewState": "AQIAAH8AAAAAAAAAAAAAwI0AAABcAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIcAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-06T17:10:27.641Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Repository\\UserRepository.cs",
               "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Repository\\UserRepository.cs",
@@ -67,12 +101,11 @@
               "RelativeToolTip": "ShopSiloAppFSD.Server\\Repository\\UserRepository.cs",
               "ViewState": "AQIAALMAAAAAAAAAAAAswMEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T17:10:00.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T17:10:00.569Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "UsersController.cs",
               "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "ShopSiloAppFSD.Server\\Controllers\\UsersController.cs",
@@ -80,12 +113,11 @@
               "RelativeToolTip": "ShopSiloAppFSD.Server\\Controllers\\UsersController.cs",
               "ViewState": "AQIAADgAAAAAAAAAAAAgwEkAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T15:32:09.137Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T15:32:09.137Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "App.jsx",
               "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\App.jsx",
               "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\App.jsx",
@@ -93,12 +125,11 @@
               "RelativeToolTip": "shopsiloappfsd.client\\src\\App.jsx",
               "ViewState": "AQIAAGMAAAAAAAAAAAAAAHQAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-06T15:30:47.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T15:30:47.749Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ProductForm.jsx",
               "DocumentMoniker": "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\src\\components\\Admin\\ProductDetails\\ProductForm.jsx",
               "RelativeDocumentMoniker": "shopsiloappfsd.client\\src\\components\\Admin\\ProductDetails\\ProductForm.jsx",
@@ -106,8 +137,7 @@
               "RelativeToolTip": "shopsiloappfsd.client\\src\\components\\Admin\\ProductDetails\\ProductForm.jsx",
               "ViewState": "AQIAAOwAAAAAAAAAAAAAAPgAAABSAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2024-10-06T15:29:59.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T15:29:59.521Z"
             }
           ]
         }
