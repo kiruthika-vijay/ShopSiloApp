@@ -1,0 +1,5 @@
+# Ignore appsettings.json
+appsettings.json
+
+# Ignore .env files
+.env

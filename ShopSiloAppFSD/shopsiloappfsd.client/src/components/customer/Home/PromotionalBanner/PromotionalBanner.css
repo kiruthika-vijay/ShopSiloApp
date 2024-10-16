@@ -1,0 +1,12 @@
+.banner-container {
+    margin: 20px !important; /* Adjust the value to increase/decrease margin */
+    position: relative !important;
+    overflow: hidden !important; /* Ensure the button stays within bounds */
+    border-radius: 10px !important; /* Optional: for rounded corners */
+}
+
+    .banner-container img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 10px !important; /* Match with the container */
+    }

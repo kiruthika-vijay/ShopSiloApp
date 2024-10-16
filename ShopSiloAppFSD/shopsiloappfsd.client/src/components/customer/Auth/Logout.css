@@ -1,0 +1,73 @@
+.logout-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.logout-button {
+    padding: 10px 20px !important;
+    background-color: #f44336 !important; /* Red */
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    transition: background-color 0.3s !important;
+}
+
+    .logout-button:hover {
+        background-color: #d32f2f !important; /* Darker red */
+    }
+
+.logout-message {
+    margin-top: 15px !important;
+    font-size: 18px !important;
+    color: green !important;
+    animation: fadeOut 3s forwards !important; /* Optional animation */
+}
+
+.modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 1000 !important; /* Ensure it's above other content */
+}
+
+.modal-content {
+    background-color: white !important;
+    padding: 20px !important;
+    border-radius: 5px !important;
+    text-align: center !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.confirm-button, .cancel-button {
+    padding: 10px 15px !important;
+    margin: 5px !important;
+    cursor: pointer !important;
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+.confirm-button {
+    background-color: #4CAF50 !important; /* Green */
+    color: white !important;
+}
+
+.cancel-button {
+    background-color: #f44336 !important; /* Red */
+    color: white !important;
+}
+
+.logout-message {
+    margin-top: 15px !important;
+    color: green !important; /* Adjust as needed */
+    font-weight: bold !important;
+}
+

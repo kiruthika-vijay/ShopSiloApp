@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.271090-alpha">
+  <PropertyGroup>
+    <StartupCommand>npm run dev</StartupCommand>
+    <JavaScriptTestRoot>src\</JavaScriptTestRoot>
+    <JavaScriptTestFramework>Jest</JavaScriptTestFramework>
+    <!-- Allows the build (or compile) script located on package.json to run on Build -->
+    <ShouldRunBuildScript>false</ShouldRunBuildScript>
+    <!-- Folder where production build objects will be placed -->
+    <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\components\Admin\AdminDashboard\" />
+    <Folder Include="src\components\Admin\Customerdetails\" />
+    <Folder Include="src\components\Admin\HeaderAdmin\" />
+    <Folder Include="src\components\Admin\AdminLayout\" />
+    <Folder Include="src\components\Admin\Auth\" />
+    <Folder Include="src\components\Admin\SellerDetails\" />
+    <Folder Include="src\components\common\Axios\" />
+    <Folder Include="src\components\common\Footer\FooterNavPages\" />
+    <Folder Include="src\components\customer\Home\FlashSales\" />
+    <Folder Include="src\components\customer\Home\Categories\" />
+    <Folder Include="src\components\customer\Home\BestSelling\" />
+    <Folder Include="src\components\customer\Home\ExploreProducts\" />
+    <Folder Include="src\components\customer\Home\NewArrivals\" />
+    <Folder Include="src\components\customer\Home\CategoryNavBar\" />
+    <Folder Include="src\components\customer\Home\NavBarPages\" />
+    <Folder Include="src\components\customer\Home\WishList\" />
+    <Folder Include="src\components\customer\Home\ServiceSection\" />
+    <Folder Include="src\components\customer\Home\PromotionalBanner\" />
+    <Folder Include="src\components\customer\Order\" />
+    <Folder Include="src\components\customer\Product\" />
+    <Folder Include="src\components\AuditLog\" />
+    <Folder Include="src\components\seller\Home\common\" />
+    <Folder Include="src\components\seller\Home\Analytics\" />
+    <Folder Include="src\components\seller\Home\UseApi\" />
+    <Folder Include="src\components\seller\Home\Profile\" />
+    <Folder Include="src\components\seller\Home\SalesReport\" />
+    <Folder Include="src\components\seller\Home\Order\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+div .categorybox {
+    text-align: center;
+}
+
+div .categorybox:hover {
+    background-color: #FF8811 !important;
+    text-align:center;
+}
+
+

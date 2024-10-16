@@ -1,0 +1,24 @@
+/*.cartButton .custom-button {
+    background-color: #F97316 !important;*/ /* Set to your desired orange */
+    /*color: white !important;*/ /* Text color */
+    /*padding: 12px 0;*/ /* Equivalent to py-3 */
+    /*width: 100%;*/ /* Full width */
+    /*border: none !important;*/ /* Remove border */
+    /*cursor: pointer;*/ /* Pointer cursor */
+    /*transition: background-color 0.3s ease;
+}
+
+    .cartButton .custom-button:hover {
+        background-color: #EA580C !important;*/ /* Darker orange on hover */
+    /*}
+
+    .cartButton .custom-button:disabled {
+        background-color: #6B7280 !important;*/ /* Gray when disabled */
+        /*cursor: not-allowed;*/ /* Not allowed cursor */
+    /*}
+
+#addToCart .custom-button {
+    background-color: #F97316 !important;*/
+    /* other styles */
+/*}*/
+

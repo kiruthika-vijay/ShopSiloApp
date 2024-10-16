@@ -1,0 +1,23 @@
+.slider-container {
+    width: calc(100% - 10px) !important; /* 5px padding on each side */
+    margin: 0 auto !important; /* Center the container */
+    padding: 20px !important; /* Add 20px padding around the slider */
+    box-sizing: border-box !important; /* Include padding in the width */
+    overflow: hidden !important; /* Prevent overflow from rounded corners */
+}
+
+.slider-container img {
+    width: 100% !important; /* Make images responsive */
+    height: 400px !important; /* Maintain aspect ratio */
+    border-radius: 8px !important;
+}
+
+.navlink {
+    text-decoration: none !important;
+    color : dimgray !important;
+    font-weight: 600;
+}
+
+.textlink {
+    color: whitesmoke !important;
+}

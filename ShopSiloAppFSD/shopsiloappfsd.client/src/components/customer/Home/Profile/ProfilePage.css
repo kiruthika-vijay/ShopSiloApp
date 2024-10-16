@@ -1,0 +1,266 @@
+.profile-page {
+    max-width: 900px !important;
+    margin: auto !important;
+    padding: 20px !important;
+    background-color: #fff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.profile-header {
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 20px !important;
+}
+
+.profile-icon {
+    border-radius: 50% !important;
+    margin-right: 20px !important;
+    width: 80px !important; /* Fixed size for profile image */
+    height: 80px !important; /* Fixed size for profile image */
+}
+
+.profile-details {
+    flex: 1 !important;
+}
+
+.edit-btn {
+    display: flex !important;
+    align-items: center !important; /* Align icon and text vertically */
+    background-color: #ff8c00 !important; /* Orange theme */
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 10px 15px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+}
+
+    .edit-btn:hover {
+        background-color: #e07b00 !important; /* Darker orange on hover */
+    }
+
+.edit-icon {
+    margin-right: 5px !important; /* Space between icon and text */
+}
+
+.navigation-card {
+    margin-top: 20px !important;
+    padding: 15px !important;
+    background-color: #f9f9f9 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.tabs {
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+.tab-btn {
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 10px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+    .tab-btn.active {
+        border-bottom: 2px solid #ff8c00 !important;
+        font-weight: bold !important;
+    }
+
+.tab-content-container {
+    border-top: 1px solid #e0e0e0 !important;
+    padding: 20px !important;
+}
+
+.details-card {
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin-bottom: 20px !important;
+    transition: transform 0.3s ease !important;
+}
+
+    .details-card:hover {
+        transform: scale(1.02) !important;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2) !important;
+    }
+
+.detail-item {
+    margin-bottom: 10px !important;
+}
+
+.address-box {
+    border: 1px solid #ccc !important;
+    padding: 10px !important;
+    margin-bottom: 10px !important;
+    border-radius: 4px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+    .address-box:hover {
+        background-color: #f0f0f0 !important; /* Light gray on hover */
+    }
+
+.order-item,
+.payment-item {
+    border: 1px solid #ccc !important;
+    padding: 10px !important;
+    margin-bottom: 10px !important;
+    border-radius: 4px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* Status colors for orders and payments */
+.order-status {
+    color: #4caf50 !important; /* Green for completed */
+}
+
+.payment-status {
+    color: #f44336 !important; /* Red for failed */
+}
+
+.order-item:hover,
+.payment-item:hover {
+    background-color: #f0f0f0 !important; /* Light gray on hover */
+}
+
+.wishlist {
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+    .wishlist li {
+        display: flex !important;
+        align-items: center !important;
+        border: 1px solid #ccc !important;
+        padding: 10px !important;
+        margin-bottom: 10px !important;
+        border-radius: 4px !important;
+        transition: background-color 0.3s ease !important;
+    }
+
+        .wishlist li:hover {
+            background-color: #f0f0f0 !important; /* Light gray on hover */
+        }
+
+/* Styles for order cancel and download invoice buttons */
+.cancel-order-btn,
+.download-invoice-btn {
+    display: flex !important;
+    align-items: center !important; /* Align icon and text vertically */
+    background-color: #e0e0e0 !important; /* Light gray */
+    color: #333 !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 10px 15px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+    margin-right: 10px !important; /* Space between buttons */
+}
+
+    .cancel-order-btn:hover,
+    .download-invoice-btn:hover {
+        background-color: #d0d0d0 !important; /* Darker gray on hover */
+    }
+
+.cancel-icon,
+.download-icon {
+    margin-right: 5px !important; /* Space between icon and text */
+}
+
+.payment-status-indicator {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    height: 30px !important;
+    width: 70px !important;
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    padding: 0 !important;
+}
+
+.payment-status-success {
+    background-color: #28a745 !important; /* Green for success */
+}
+
+.payment-status-failed {
+    background-color: #dc3545 !important; /* Red for failure */
+}
+
+.payment-status-pending {
+    background-color: #ffc107 !important; /* Yellow for pending */
+}
+
+.payment-status-cancelled {
+    background-color: #6c757d !important; /* Grey for cancelled */
+}
+
+/* Styling for the transaction ID copy button */
+.copy-btn {
+    cursor: pointer !important;
+}
+
+.order-status-indicator {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    height: 30px !important;
+    width: 70px !important;
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    padding: 0 !important;
+}
+
+
+.order-status-delivered {
+    background-color: #28a745 !important; /* Green for delivered */
+}
+
+.order-status-shipped {
+    background-color: #17a2b8 !important; /* Blue for shipped */
+}
+
+.order-status-processing {
+    background-color: #ffc107 !important; /* Yellow for processing */
+}
+
+.order-status-cancelled {
+    background-color: #dc3545 !important; /* Red for cancelled */
+}
+
+/* Styling for order details and cancel button */
+.order-item, .payment-item {
+    position: relative !important;
+    padding: 15px !important;
+    margin-bottom: 10px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 5px !important;
+    background-color: #fff !important;
+    cursor: grab !important;
+    transition: box-shadow 0.3s ease !important;
+}
+
+
+    .order-item:hover, .payment-item:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    }
+
+.cancel-btn {
+    background-color: #dc3545 !important; /* Red for cancel button */
+    color: #fff !important;
+    padding: 5px 10px !important;
+    border-radius: 5px !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease !important;
+}
+
+    .cancel-btn:hover {
+        background-color: #c82333 !important; /* Darker red on hover */
+    }
+

@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSiloAppFSD.Server", "ShopSiloAppFSD.Server\ShopSiloAppFSD.Server.csproj", "{E9E45618-877F-44EE-BD5B-3BC496C6592B}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "shopsiloappfsd.client", "shopsiloappfsd.client\shopsiloappfsd.client.esproj", "{9C28EA32-8827-498A-88FA-98BE82CE5791}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSiloApp.Tests", "ShopSiloApp.Tests\ShopSiloApp.Tests.csproj", "{FDAD69B4-7015-4C63-8311-8440BB6E7280}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9E45618-877F-44EE-BD5B-3BC496C6592B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9E45618-877F-44EE-BD5B-3BC496C6592B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9E45618-877F-44EE-BD5B-3BC496C6592B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9E45618-877F-44EE-BD5B-3BC496C6592B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C28EA32-8827-498A-88FA-98BE82CE5791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C28EA32-8827-498A-88FA-98BE82CE5791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C28EA32-8827-498A-88FA-98BE82CE5791}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9C28EA32-8827-498A-88FA-98BE82CE5791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C28EA32-8827-498A-88FA-98BE82CE5791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C28EA32-8827-498A-88FA-98BE82CE5791}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FDAD69B4-7015-4C63-8311-8440BB6E7280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDAD69B4-7015-4C63-8311-8440BB6E7280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDAD69B4-7015-4C63-8311-8440BB6E7280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDAD69B4-7015-4C63-8311-8440BB6E7280}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F37C74B6-323B-4BCE-8282-45E69D26DBB3}
+	EndGlobalSection
+EndGlobal

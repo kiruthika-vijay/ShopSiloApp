@@ -1,0 +1,6 @@
+@ShopSiloAppFSD.Server_HostAddress = http://localhost:5072
+
+GET {{ShopSiloAppFSD.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
