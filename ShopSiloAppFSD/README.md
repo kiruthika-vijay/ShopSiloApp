@@ -171,5 +171,40 @@ To run the project:
 }
 ```
 
+## **Setting Up Env Files for Secure Access of Credentials**
+### **Client .env file**
+```
+VITE_GOOGLE_CLIENT_ID={client_id}.apps.googleusercontent.com
+```
+
+### **Server .env file**
+```
+# Database Configuration
+DB_SERVER=DB_SERVER
+DB_NAME=DB_NAME
+DB_USER=your_db_username
+DB_PASS=your_db_password
+
+# Razorpay API Keys
+RAZORPAY_API_KEY=rzp_test_key
+RAZORPAY_API_SECRET=razorpay secret
+
+# Cloudinary API Keys
+CLOUDINARY_NAME=cloud name
+CLOUDINARY_API_KEY=cloud api key
+CLOUDINARY_API_SECRET=cloud api secret
+
+# Google OAuth Credentials
+GOOGLE_CLIENT_ID={client_id}.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=client secret
+
+# JWT Secret Key
+JWT_SECRET_KEY={jwt token}
+
+#React App URL
+REACT_APP_URL=https://localhost:0000
+```
+
+
 
 
