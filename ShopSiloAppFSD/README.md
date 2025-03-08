@@ -173,18 +173,20 @@ To run the project:
     "Key": "${JWT_SECRET_KEY}"
   },
   "ReactApp": {
-    "REACT_APP_URL": "https://localhost:5173"
+    "REACT_APP_URL": "https://localhost:0000"
   }
 }
 ```
 
 ## **Setting Up Env Files for Secure Access of Credentials**
 ### **Client .env file**
+
 ```bash
 VITE_GOOGLE_CLIENT_ID={client_id}.apps.googleusercontent.com
 ```
 
 ### **Server .env file**
+
 ```bash
 # Database Configuration
 DB_SERVER=DB_SERVER
