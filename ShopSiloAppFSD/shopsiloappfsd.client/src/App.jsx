@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Outlet } from 'react-router-dom'; // Import Outlet
 import Login from './components/customer/Auth/Login';
@@ -45,6 +45,9 @@ import EditProductForm from './components/seller/Home/Product/EditProductForm';
 import OrderView from './components/seller/Home/Order/OrderView';
 import AdminLogin from './components/Admin/Auth/AdminLogin';
 import CategoryBrowseProducts from './components/customer/Home/Categories/CategoryBrowseProducts';
+import EditProductFormAdmin from './components/Admin/ProductDetails/EditProductForm';
+import { SnackbarProvider, useSnackbar } from 'notistack';
+import ScrollUp from './components/common/ScrollUp';
 
 const CustomerLayout = () => (
     <CountProvider>
@@ -58,6 +61,8 @@ const CustomerLayout = () => (
 
 const App = () => {
     return (
+        <SnackbarProvider maxSnack={3} autoHideDuration={3000}>
+            <ScrollUp /> {/* Ensures the page scrolls to top on navigation */}
         <Routes>
             {/* 404 Not Found Route */}
             <Route path="*" element={<NotFound />} />
@@ -101,9 +106,11 @@ const App = () => {
             <Route path="/seller" element={<SellerLayout />}>
                 <Route path="dashboard" element={<SellerDashboard />} />
                 <Route path="editproduct/:productId" element={<EditProductForm />} /> {/* Add the edit product route */}
-                <Route path="products/productlist" element={<ProductList />} />
-                <Route path="products/productupload" element={<ProductForm />} />
-                <Route path="products/inventoryManagement" element={<InventoryManagement />} />
+                <Route path="products">
+                    <Route path="productlist" element={<ProductList />} />
+                    <Route path="productupload" element={<ProductForm />} />
+                    <Route path="inventoryManagement" element={<InventoryManagement />} />
+                </Route>
                 <Route path="account/profile" element={<Profile />} />
                 <Route path="orders/orderview" element={<OrderView/> }/>
             </Route>
@@ -115,12 +122,13 @@ const App = () => {
             <Route path="/admin" element={<AdminLayout />} >
                 <Route path="customers" element={<CustomerList />} />
                 <Route path="products" element={<AdminProductList />} />
+                <Route path="editproduct/:productId" element={<EditProductFormAdmin />} /> {/* Add the edit product route */}
                 <Route path="sellers" element={<SellerList />} />
                 <Route path="autitlogs" element={<AuditReportList />} />
                 <Route path="dashboard" index={true} element={<AdminDashboard />} />
             </Route>
-
-        </Routes>
+            </Routes>
+        </SnackbarProvider>
     );
 };
 

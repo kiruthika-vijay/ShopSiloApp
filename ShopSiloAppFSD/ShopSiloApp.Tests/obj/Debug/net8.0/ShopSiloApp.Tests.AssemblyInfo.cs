@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopSiloApp.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3b2e392bad494660cad3b339ef86afd4a202005")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f632611d5c74fcfd1621a48e0b2a95e407f3e37c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopSiloApp.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopSiloApp.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

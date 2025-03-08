@@ -273,6 +273,7 @@ namespace ShopSiloAppFSD.Repository
                 {
                     OrderID = o.OrderID,
                     TotalAmount = o.TotalAmount,
+                    OrderDate = o.OrderDate,
                     UserID = o.UserID,
                     SellerID = o.SellerID,
                     ShippingAddressID = o.ShippingAddressID,

@@ -49,8 +49,23 @@ namespace ShopSiloAppFSD.Repository
             var product = await _context.Products.FirstOrDefaultAsync(p => p.ProductID == inventory.ProductID);
             try
             {
-                _context.Inventories.Add(inventory);
+                var inventoryProduct = await _context.Inventories.FirstOrDefaultAsync(i => i.ProductID == product.ProductID);
+                if (inventoryProduct == null)
+                {
+                    _context.Inventories.Add(inventory);
+                }
+                else
+                {
+                    inventoryProduct.Quantity += inventory.Quantity;
+                }
                 await _context.SaveChangesAsync();
+
+                // Check if _productRepository is not null before calling it
+                if (_productRepository != null)
+                {
+                    await _productRepository.UpdateStockQuantityAsync(inventory.ProductID);
+                }
+
                 if (_auditLogConfig.IsAuditLogEnabled) // Check if audit log is enabled
                 {
                     AuditLog auditLog = new AuditLog()

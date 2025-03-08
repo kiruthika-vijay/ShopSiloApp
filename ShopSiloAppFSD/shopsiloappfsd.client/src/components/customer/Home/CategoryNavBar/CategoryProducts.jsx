@@ -22,7 +22,6 @@ const CategoryProducts = () => {
             try {
                 // Fetch all products under the selected category
                 const response = await apiClient.get(`/Product/Category/${categoryId}/m`);
-                console.log('Products Response:', response.data); // Log response for debugging
                 if (!response.data || !response.data.$values) {
                     throw new Error('Failed to fetch products');
                 }
@@ -37,7 +36,6 @@ const CategoryProducts = () => {
         const fetchSubcategories = async () => {
             try {
                 const response = await apiClient.get(`/Categories/Subcategories/${categoryId}`);
-                console.log('Subcategories Response:', response.data); // Log response for debugging
                 if (!response.data || !response.data.$values) {
                     throw new Error('Failed to fetch subcategories');
                 }

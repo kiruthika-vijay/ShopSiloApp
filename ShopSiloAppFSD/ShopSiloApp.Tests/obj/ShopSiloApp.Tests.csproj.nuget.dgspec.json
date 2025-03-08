@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloApp.Tests\\ShopSiloApp.Tests.csproj": {}
+    "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloApp.Tests\\ShopSiloApp.Tests.csproj": {}
   },
   "projects": {
-    "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloApp.Tests\\ShopSiloApp.Tests.csproj": {
+    "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloApp.Tests\\ShopSiloApp.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloApp.Tests\\ShopSiloApp.Tests.csproj",
+        "projectUniqueName": "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloApp.Tests\\ShopSiloApp.Tests.csproj",
         "projectName": "ShopSiloApp.Tests",
-        "projectPath": "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloApp.Tests\\ShopSiloApp.Tests.csproj",
+        "projectPath": "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloApp.Tests\\ShopSiloApp.Tests.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloApp.Tests\\obj\\",
+        "outputPath": "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloApp.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj": {
-                "projectPath": "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj"
+              "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj": {
+                "projectPath": "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj"
               }
             }
           }
@@ -98,14 +98,14 @@
         }
       }
     },
-    "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj": {
+    "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj",
+        "projectUniqueName": "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj",
         "projectName": "ShopSiloAppFSD.Server",
-        "projectPath": "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj",
+        "projectPath": "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\ShopSiloAppFSD.Server.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\obj\\",
+        "outputPath": "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -142,6 +142,10 @@
             "CloudinaryDotNet": {
               "target": "Package",
               "version": "[1.26.2, )"
+            },
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.1.1, )"
             },
             "EPPlus": {
               "target": "Package",

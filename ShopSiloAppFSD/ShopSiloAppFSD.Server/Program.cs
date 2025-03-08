@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.Google;
+﻿using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -14,12 +14,69 @@ using ShopSiloAppFSD.Server.Interfaces;
 using ShopSiloAppFSD.Server.Services;
 using ShopSiloAppFSD.Services;
 using System.Text;
+using DotNetEnv;
 
 public class Program
 {
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
+        // Load .env file
+        DotNetEnv.Env.Load();
+
+        // Load configuration from environment variables
+        builder.Configuration.AddEnvironmentVariables();
+
+        // ✅ Load environment variables from .env
+        DotNetEnv.Env.Load();
+
+        var configuration = builder.Configuration;
+
+        // ✅ Database Configuration
+        var DB_SERVER = Environment.GetEnvironmentVariable("DB_SERVER") ?? "localhost";
+        var DB_NAME = Environment.GetEnvironmentVariable("DB_NAME") ?? "master";
+
+        // ✅ Razorpay API Keys
+        var RAZORPAY_API_KEY = Environment.GetEnvironmentVariable("RAZORPAY_API_KEY") ?? "";
+        var RAZORPAY_API_SECRET = Environment.GetEnvironmentVariable("RAZORPAY_API_SECRET") ?? "";
+
+        // ✅ Cloudinary API Keys
+        var CLOUDINARY_NAME = Environment.GetEnvironmentVariable("CLOUDINARY_NAME") ?? "";
+        var CLOUDINARY_API_KEY = Environment.GetEnvironmentVariable("CLOUDINARY_API_KEY") ?? "";
+        var CLOUDINARY_API_SECRET = Environment.GetEnvironmentVariable("CLOUDINARY_API_SECRET") ?? "";
+
+        // ✅ Google OAuth Credentials
+        var GOOGLE_CLIENT_ID = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID") ?? "";
+        var GOOGLE_CLIENT_SECRET = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_SECRET") ?? "";
+
+        // ✅ JWT Secret Key
+        var JWT_SECRET_KEY = Environment.GetEnvironmentVariable("JWT_SECRET_KEY") ?? "";
+
+        // ✅ React App URL
+        var REACT_APP_URL = Environment.GetEnvironmentVariable("REACT_APP_URL") ?? "https://localhost:5173";
+
+        // ✅ Construct the Connection String
+        string connectionString = $"Server={DB_SERVER};Database={DB_NAME};Integrated Security=True;TrustServerCertificate=True;";
+
+        // ✅ Inject connection string into Configuration
+        builder.Configuration["ConnectionStrings:ShopSiloConStr"] = connectionString;
+
+        builder.Configuration["Razorpay:ApiKey"] = RAZORPAY_API_KEY;
+        builder.Configuration["Razorpay:ApiSecret"] = RAZORPAY_API_SECRET;
+
+        builder.Configuration["Cloudinary:CloudName"] = CLOUDINARY_NAME;
+        builder.Configuration["Cloudinary:ApiKey"] = CLOUDINARY_API_KEY;
+        builder.Configuration["Cloudinary:ApiSecret"] = CLOUDINARY_API_SECRET;
+
+        builder.Configuration["GoogleAuthSettings:ClientId"] = GOOGLE_CLIENT_ID;
+        builder.Configuration["GoogleAuthSettings:ClientSecret"] = GOOGLE_CLIENT_SECRET;
+
+        builder.Configuration["Jwt:Key"] = JWT_SECRET_KEY;
+
+        builder.Configuration["ReactApp:REACT_APP_URL"] = REACT_APP_URL;
+
+        Console.WriteLine($"Connection String: {connectionString}");
 
         // Add services to the container
         builder.Services.AddControllers()
@@ -33,22 +90,21 @@ public class Program
         builder.Services.AddCors(options => {
             options.AddPolicy("AllowReactApp", policy =>
             {
-                policy.WithOrigins("https://localhost:5173")
+                policy.WithOrigins(REACT_APP_URL ?? "https://localhost:5173")
                        .AllowAnyHeader()
                        .AllowAnyMethod();
             });
         });
 
-        // Register Cloudinary service with configuration from appsettings.json
+        // Register Cloudinary service
         builder.Services.AddScoped<ICloudinaryService, CloudinaryService>();
 
         builder.Services.AddScoped<IRazorpayService>(provider =>
-            {
-                var configuration = provider.GetRequiredService<IConfiguration>();
-                var apiKey = configuration["Razorpay:ApiKey"];
-                var apiSecret = configuration["Razorpay:ApiSecret"];
-                return new RazorpayService(apiKey, apiSecret);
-            });
+        {
+            var apiKey = RAZORPAY_API_KEY ?? "";
+            var apiSecret = RAZORPAY_API_SECRET ?? "";
+            return new RazorpayService(apiKey, apiSecret);
+        });
 
         // Register services
         builder.Services.AddScoped<DashboardService>();
@@ -77,14 +133,15 @@ public class Program
         builder.Services.AddScoped<IAuditLogRepository, AuditLogRepository>();
         builder.Services.AddScoped<IWishlistRepository, WishlistRepository>();
 
-        builder.Services.AddScoped<IAuditLogConfiguration, AuditLogConfiguration>(); // Use real config in production
-        builder.Services.AddHttpContextAccessor(); // To access HttpContext in repositories
+        builder.Services.AddScoped<IAuditLogConfiguration, AuditLogConfiguration>();
+        builder.Services.AddHttpContextAccessor();
 
         builder.Services.AddControllersWithViews();
+
         // Configure DbContext
         builder.Services.AddDbContext<ShopSiloDBContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("ShopSiloConStr")));
-        
+            options.UseSqlServer(connectionString ?? ""));
+
         // JWT Authentication
         builder.Services.AddAuthentication(options =>
         {
@@ -100,15 +157,15 @@ public class Program
                 ValidateAudience = true,
                 ValidateLifetime = true,
                 ValidateIssuerSigningKey = true,
-                ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                ValidAudience = builder.Configuration["Jwt:Audience"],
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                ValidIssuer = configuration["Jwt:Issuer"],
+                ValidAudience = configuration["Jwt:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JWT_SECRET_KEY ?? ""))
             };
         })
         .AddGoogle(googleOptions =>
         {
-            googleOptions.ClientId = builder.Configuration["GoogleAuthSettings:ClientId"];
-            googleOptions.ClientSecret = builder.Configuration["GoogleAuthSettings:ClientSecret"];
+            googleOptions.ClientId = GOOGLE_CLIENT_ID ?? "";
+            googleOptions.ClientSecret = GOOGLE_CLIENT_SECRET ?? "";
         });
 
         // Setup for API Versioning
@@ -157,9 +214,8 @@ public class Program
         var app = builder.Build();
 
         app.UseDefaultFiles();
-        app.UseStaticFiles(); // Enable static file serving
+        app.UseStaticFiles();
 
-        // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
@@ -170,7 +226,6 @@ public class Program
         }
         else
         {
-            // Use exception handler for production
             app.UseExceptionHandler("/Error");
         }
 
@@ -180,9 +235,7 @@ public class Program
         app.UseAuthentication();
         app.UseAuthorization();
 
-
         app.MapControllers();
-
         app.MapFallbackToFile("/index.html");
 
         app.Run();

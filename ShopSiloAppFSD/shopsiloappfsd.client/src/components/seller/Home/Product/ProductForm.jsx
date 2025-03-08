@@ -89,8 +89,7 @@ const ProductAddForm = () => {
         formData.append('description', productData.description);
         formData.append('price', productData.price);
         formData.append('stockQuantity', productData.stockQuantity);
-        formData.append('categoryID', productData.categoryID);
-        formData.append('subCategoryID', productData.subCategoryID);
+        formData.append('categoryID', productData.subCategoryID);
         formData.append('categoryName', productData.categoryName);
         formData.append('image', image);
         formData.append('sellerId', sellerID);
@@ -145,6 +144,7 @@ const ProductAddForm = () => {
                         onChange={handleInputChange}
                         multiline
                         rows={4}
+                        required
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -173,7 +173,7 @@ const ProductAddForm = () => {
                 </Grid>
                 <Grid item xs={12}>
                     <FormControl fullWidth variant="outlined">
-                        <InputLabel id="category-select-label">Category</InputLabel>
+                        <InputLabel style={{ backgroundColor: '#f3f4f6', paddingLeft: 4, paddingRight: 4 }} id="category-select-label">Category</InputLabel>
                         <Select
                             labelId="category-select-label"
                             value={productData.categoryName}
@@ -191,7 +191,7 @@ const ProductAddForm = () => {
                 {subCategories.length > 0 && (
                     <Grid item xs={12}>
                         <FormControl fullWidth variant="outlined">
-                            <InputLabel id="subcategory-select-label">Subcategory</InputLabel>
+                            <InputLabel style={{ backgroundColor: '#f3f4f6', paddingLeft: 4, paddingRight: 4 }} id="subcategory-select-label">Subcategory</InputLabel>
                             <Select
                                 labelId="subcategory-select-label"
                                 value={productData.subCategoryName}

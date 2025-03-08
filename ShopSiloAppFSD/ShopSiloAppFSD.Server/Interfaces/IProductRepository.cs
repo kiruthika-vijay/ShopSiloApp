@@ -7,14 +7,14 @@ namespace ShopSiloAppFSD.Interfaces
     public interface IProductRepository
     {
         Task AddProductAsync(Product product);
-        Task UpdateProductAsync(Product product);
+        Task UpdateProductAsync(int id, UpdateProductDto productDto);
         Task DeleteProductAsync(int productId);
         Task<Product> GetProductByIdAsync(int productId);
         Task<IEnumerable<Product>> GetAllProductsAsync();
         Task ToggleProductStatusAsync(int productId);
         Task<IEnumerable<Product>> SearchProductsAsync(string searchTerm);
-        Task<IEnumerable<ProductDisplayDto>> GetProductsByCategoryAsync(int? categoryId, string categoryName);
-        Task<IEnumerable<Product>> GetProductsByParentCategoryIdAsync(int parentCategoryId);
+        Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(int? categoryId, string categoryName);
+        Task<IEnumerable<ProductDto>> GetProductsByParentCategoryIdAsync(int parentCategoryId);
         Task<IEnumerable<Product>> GetTopRatedProductsAsync(int limit);
         Task UpdateStockQuantityAsync(int productId);
         Task<IEnumerable<Product>> GetProductsBySellerAsync(int sellerId);

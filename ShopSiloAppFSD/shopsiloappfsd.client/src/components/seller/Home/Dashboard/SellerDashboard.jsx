@@ -5,9 +5,9 @@ import { GiCash } from "react-icons/gi";
 import { FaTags } from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
 import { GiSellCard } from "react-icons/gi";
-import { HiDotsVertical } from "react-icons/hi";
-import BestSellingProducts from './BestSellingProducts';
 import Leaderboard from './Leaderboard';
+import BestSellingProducts from './BestSellingProducts';
+import './Leaderboard.css';
 
 const SellerDashboard = ({ sellerId }) => {
     const [totalSales, setTotalSales] = useState(0);
@@ -38,22 +38,22 @@ const SellerDashboard = ({ sellerId }) => {
 
     return (
         <div className="right-content w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 row dashboardBoxWrapperRow"> {/* Three columns layout */}
-                <div className="col-span-1 md:col-span-2"> {/* Left column for 4 boxes */}
-                    <div className="dashboardBoxWrapper flex grid grid-cols-2 gap-4"> {/* 2x2 grid for DashboardBox */}
-                        <DashboardBox color={["#1DA256", "#48D483"]} icon={<GiSellCard />} value={"Sales"} count={totalSales} grow={true} />
-                        <DashboardBox color={["#C012E2", "#EB64FE"]} icon={<FaTags />} value={"Products"} count={totalProducts} grow={false} />
-                        <DashboardBox color={["#2C78E5", "#60AFF5"]} icon={<FaCartShopping />} value={"Orders"} count={totalOrders} grow={false} />
-                        <DashboardBox color={["#E1950E", "#F3CD29"]} icon={<GiCash />} value={"Revenue"} count={totalRevenue} grow={true} />
-                    </div>
-                </div>
-                <div className="col-span-1 md:col-span-1 h-full"> {/* Right column for the revenue graph */}                    
-                    <div className="box graphBox h-full p-4 text-center">
-                        <h2 className="leaderboard-title">Top 5 Sellers</h2>
-                        <Leaderboard />
-                    </div>
-                </div>
+            
+            {/* DashboardBox components in a single full-width row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 ml-4 row dashboardBoxWrapperRow dashboardBoxWrapper">
+                <DashboardBox color={["#1DA256", "#48D483"]} icon={<GiSellCard />} value={"Sales"} count={totalSales} grow={true} />
+                <DashboardBox color={["#C012E2", "#EB64FE"]} icon={<FaTags />} value={"Products"} count={totalProducts} grow={false} />
+                <DashboardBox color={["#2C78E5", "#60AFF5"]} icon={<FaCartShopping />} value={"Orders"} count={totalOrders} grow={false} />
+                <DashboardBox color={["#E1950E", "#F3CD29"]} icon={<GiCash />} value={"Revenue"} count={totalRevenue} grow={true} />
             </div>
+
+            {/* Leaderboard section at the top, full-width */}
+            <div className="w-full p-4 mb-4 box graphBox text-center">
+                <h2 className="leaderboard-title">Top 5 Sellers</h2>
+                <Leaderboard />
+            </div>
+
+            {/* Best Selling Products section */}
             <BestSellingProducts />
         </div>
     );

@@ -47,7 +47,7 @@ namespace ShopSiloAppFSD.Services
                 Document document = new Document(pdf);
 
                 // Add company logo
-                var logoPath = "D:\\HEXA-SEGUE 201 - .NET FSD\\FullStackSHOPSILO\\ShopSiloAppFSD\\shopsiloappfsd.client\\public\\images\\shopSiloLogo.png";
+                var logoPath = "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\shopsiloappfsd.client\\public\\images\\shopSiloLogo.png";
                 ImageData logoImage = ImageDataFactory.Create(logoPath);
                 Image logo = new Image(logoImage).ScaleAbsolute(80, 30); // Smaller size for better alignment
 

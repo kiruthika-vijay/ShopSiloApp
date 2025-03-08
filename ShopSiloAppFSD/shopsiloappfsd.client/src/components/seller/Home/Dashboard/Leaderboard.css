@@ -1,145 +1,195 @@
-.leaderboard-container {
-    width: 100%;
-    max-width: 900px;
-    margin: 60px auto;
-    background: linear-gradient(to right, #4a90e2, #50e3c2); /* Balanced gradient */
-    border-radius: 15px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
-    padding: 20px;
-    text-align: center;
-}
-
 .leaderboard-title {
-    font-size: 25px;
-    font-weight: 700;
-    color: #ffffff; /* Changed to white for better contrast */
-    margin-bottom: 30px;
-    text-transform: uppercase;
+    font-size: 2rem; /* Large font size for emphasis */
+    font-weight: bold; /* Make the font bold */
+    color: #fff; /* White text color for contrast */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 1rem; /* Space below the title */
+    position: relative; /* Positioning for pseudo-elements */
+    padding: 0.5rem 1rem; /* Padding for a clean look */
+    background: rgb(93,31,12);
+    background: linear-gradient(90deg, rgba(189,66,128,1) 0%, rgba(156,52,141,1) 50%, rgba(240,180,226,1) 100%);
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    overflow: hidden; /* Hide overflow for pseudo-elements */
+}
+/* Pulsating background effect */
+@keyframes pulsate {
+    0%, 100% {
+        transform: scale(1);
+        background: linear-gradient(45deg, #c76b00, #a02b5c);
+    }
+
+    50% {
+        transform: scale(1.05);
+        background: linear-gradient(45deg, #ffb74d, #ff5c8a); /* Change gradient on pulse */
+    }
+}
+.leaderboard-title::before,
+.leaderboard-title::after {
+    content: ''; /* Empty content for decoration */
+    position: absolute; /* Positioning pseudo-elements */
+    width: 100%; /* Full width */
+    height: 3px; /* Thin decorative line */
+    background: #fc81c3; /* Color for decoration lines */
+    animation: slide 5s linear infinite; /* Smooth sliding animation */
 }
 
-.top-sellers {
+    .leaderboard-title::before {
+        top: 0; /* Top edge */
+        left: -100%; /* Start from the left */
+    }
+
+    .leaderboard-title::after {
+        bottom: 0; /* Bottom edge */
+        right: -100%; /* Start from the right */
+    }
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Main container styling */
+.leaderboard-container {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 30px;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    animation: fadeIn 0.6s ease;
 }
 
-.top-seller {
-    text-align: center;
+/* Card styling */
+.seller-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    height: 80px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    cursor: pointer;
+    border-left: 4px solid transparent;
 }
 
+    .seller-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        border-left: 4px solid #ffba08; /* Highlight on hover */
+    }
+
+/* Rank-specific background gradients */
+.rank-1 {
+    background: linear-gradient(135deg, #ffdd57, #fcca03);
+}
+
+.rank-2 {
+    background: linear-gradient(135deg, #c0c0c0, #dcdcdc);
+}
+
+.rank-3 {
+    background: linear-gradient(135deg, #cd7f32, #f4a261);
+}
+
+.rank-4, .rank-5 {
+    background: #211a4d;
+}
+
+/* Medal and rank circle styles */
 .seller-circle {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    font-weight: 600;
+    margin-right: 16px;
+    background-size: cover;
+    font-size: 1.2em;
+    font-weight: bold;
     color: #fff;
-    background: linear-gradient(45deg, #6dd5ed, #2193b0); /* Soothing gradient for circles */
     position: relative;
-    margin: 0 auto;
-    margin-top: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
-    transition: transform 0.3s ease-in-out;
 }
 
-    .seller-circle:hover {
-        transform: scale(1.05);
-    }
-
-/* Higher elevation for Rank 1 Circle */
-.rank-1-circle {
-    background: linear-gradient(45deg, #f7b42c, #fc575e);
-    transform: translateY(-10px); /* Move up */
-    z-index: 5; /* Bring to front */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+.medal-1 {
+    background-image: url('/public/images/goldmedal.png');
 }
 
-/* Adjust Rank 2 and Rank 3 circles */
-.rank-2-circle {
-    background: linear-gradient(45deg, #bdc3c7, #2c3e50);
-    z-index: 3; /* Less than Rank 1 */
+.medal-2 {
+    background-image: url('/public/images/silvermedal.png');
 }
 
-.rank-3-circle {
-    background: linear-gradient(45deg, #d4a017, #f5b041);
-    z-index: 1; /* Less than Rank 2 */
+.medal-3 {
+    background-image: url('/public/images/bronzemedal.png');
+}
+
+.medal-4, .medal-5 {
+    background: #851471;
 }
 
 .rank-number {
-    font-size: 40px;
+    font-size: 1.5em;
     font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.seller-details h4 {
-    font-size: 15px;
-    font-weight: 700;
-    color: #ffffff; /* Changed to white for better contrast */
-    margin-top: 10px;
+/* Seller details styling */
+.seller-details h2 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #ffffff; /* Lighter color for readability */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    font-style: oblique; /* Straight text for clarity */
 }
 
-.seller-details p {
-    font-size: 14px;
-    color: #ffffff; /* Changed to white for better contrast */
-}
-
-.gold-crown {
-    font-size: 40px;
-    color: gold;
-    position: absolute;
-    top: -40px;
-    right: 0;
-    left: 0;
-}
-
-.seller-list {
-    margin-top: 10px;
+.seller-details h6 {
+    margin: 4px 0;
+    font-weight: 600;
+    font-size: 1em;
+    color: #f0f0f0; /* Softer white for readability on dark backgrounds */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+    font-style: oblique; /* Slightly italicized for distinction */
     text-align: left;
-    padding: 10px 5px;
 }
 
-.seller-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    background-color: #0c1b45;
-    margin-bottom: 5px;
-    padding-left: 10px;
-    transition: background-color 0.3s ease;
-    border-radius: 10px;
+/* For readability specifically on the bronze background */
+.rank-3 .seller-details h2,
+.rank-3 .seller-details h6 {
+    color: #f9f9f9; /* Slightly brighter text for bronze card */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
 }
 
-    .seller-row:hover {
-        background-color: #212841; /* Darker shade for hover effect */
+/* Adaptive shadow and color styling for all medal backgrounds */
+.rank-1 .seller-details h2,
+.rank-2 .seller-details h2,
+.rank-3 .seller-details h2 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* More shadow for metallic effect */
+}
+
+.rank-1 .seller-details h6,
+.rank-2 .seller-details h6,
+.rank-3 .seller-details h6 {
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
 
-.row-rank {
-    font-size: 18px;
-    font-weight: 700;
-    color: #6dd5ed; /* Changed to a more vibrant shade for contrast */
-    margin-left: 10px;
-}
-
-.row-seller-info h4 {
-    font-size: 16px;
-    color: #ffffff; /* Changed to white for better contrast */
-    margin: 0;
-    margin-left: 10px;
-}
-
-.row-seller-info p {
-    font-size: 12px;
-    color: #ffffff; /* Changed to white for better contrast */
-    margin-left: 10px;
-}
-
-.divider {
-    border: 0;
-    height: 1px;
-    background: #ddd;
-    margin: 10px 0;
+    to {
+        opacity: 1;
+    }
 }

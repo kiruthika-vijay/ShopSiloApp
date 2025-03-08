@@ -11,6 +11,7 @@ using System.Security.Claims;
 using ShopSiloAppFSD.Server.DTO;
 using ShopSiloAppFSD.DTO;
 using iText.Commons.Actions.Data;
+using ShopSiloAppFSD.Server.Services;
 
 namespace ShopSiloAppFSD.Repository
 {
@@ -21,15 +22,18 @@ namespace ShopSiloAppFSD.Repository
         private readonly IAuditLogConfiguration _auditLogConfig;
         private readonly string? _userId;
         private readonly User? _user;
+        private readonly ICloudinaryService _cloudinaryService;
 
         public ProductRepository(
             ShopSiloDBContext context,
             IHttpContextAccessor httpContextAccessor,
-            IAuditLogConfiguration auditLogConfig)
+            IAuditLogConfiguration auditLogConfig,
+            ICloudinaryService cloudinaryService)
         {
             _context = context;
             _httpContextAccessor = httpContextAccessor;
             _auditLogConfig = auditLogConfig;
+            _cloudinaryService = cloudinaryService;
             _userId = _httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
             if (!string.IsNullOrEmpty(_userId))
@@ -42,17 +46,30 @@ namespace ShopSiloAppFSD.Repository
         {
             try
             {
+                // Add product to the database
                 await _context.Products.AddAsync(product);
-                if (_auditLogConfig.IsAuditLogEnabled) // Check if audit log is enabled
+                await _context.SaveChangesAsync(); // Ensures ProductID is generated
+
+                // Initialize inventory record with stock quantity for the new product
+                Inventory inventoryItem = new Inventory
+                {
+                    ProductID = product.ProductID,
+                    Quantity = product.StockQuantity
+                };
+                await _context.Inventories.AddAsync(inventoryItem);
+
+                // Add audit log if enabled
+                if (_auditLogConfig.IsAuditLogEnabled)
                 {
                     AuditLog auditLog = new AuditLog()
                     {
-                        Action = $"New product {product.ProductName} added to the database.",
+                        Action = $"New product {product.ProductName} added to the database with initial stock quantity of {product.StockQuantity}.",
                         Timestamp = DateTime.UtcNow,
                         UserId = _user?.UserID ?? 0
                     };
                     await _context.AuditLogs.AddAsync(auditLog);
                 }
+
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
@@ -61,51 +78,78 @@ namespace ShopSiloAppFSD.Repository
             }
         }
 
-        public async Task UpdateProductAsync(Product product)
+        public async Task UpdateProductAsync(int id, UpdateProductDto productDto)
         {
             try
             {
-                var existingProduct = await _context.Products.FindAsync(product.ProductID);
+                // Fetch existing product and inventory
+                var existingProduct = await _context.Products.FindAsync(id);
                 if (existingProduct == null)
                 {
-                    throw new NotFoundException($"Product with ID {product.ProductID} not found.");
+                    throw new NotFoundException($"Product with ID {id} not found.");
                 }
 
-                existingProduct.ProductName = product.ProductName;
-                existingProduct.Description = product.Description;
-                existingProduct.Price = product.Price;
-                existingProduct.StockQuantity = product.StockQuantity;
-                existingProduct.ImageURL = product.ImageURL;
-                existingProduct.SellerID = product.SellerID;
-                existingProduct.CategoryID = product.CategoryID;
+                var inventory = await _context.Inventories.FirstOrDefaultAsync(p => p.ProductID == id);
+
+                // Handle Image Update
+                if (productDto.Image != null)
+                {
+                    // Remove existing image if it’s hosted on Cloudinary
+                    if (!string.IsNullOrEmpty(existingProduct.ImageURL) && existingProduct.ImageURL.Contains("cloudinary"))
+                    {
+                        var publicId = _cloudinaryService.GetPublicIdFromUrl(existingProduct.ImageURL);
+                        await _cloudinaryService.DeleteImage(publicId);
+                    }
+                    // Upload new image and set URL
+                    var uploadResult = await _cloudinaryService.UploadImageAsync(productDto.Image);
+                    if (uploadResult == null)
+                    {
+                        throw new RepositoryException("Image upload failed.");
+                    }
+                    existingProduct.ImageURL = uploadResult;
+                }
+                else if (productDto.RemoveImage)
+                {
+                    // Handle Image Removal
+                    if (!string.IsNullOrEmpty(existingProduct.ImageURL) && existingProduct.ImageURL.Contains("cloudinary"))
+                    {
+                        var publicId = _cloudinaryService.GetPublicIdFromUrl(existingProduct.ImageURL);
+                        await _cloudinaryService.DeleteImage(publicId);
+                    }
+                    existingProduct.ImageURL = null;
+                }
+
+                // Update Other Product Details
+                existingProduct.ProductName = productDto.ProductName;
+                existingProduct.Description = productDto.Description;
+                existingProduct.Price = productDto.Price;
+                existingProduct.StockQuantity = productDto.StockQuantity;
+                existingProduct.CategoryID = productDto.CategoryID;
+                existingProduct.SellerID = productDto.SellerID;
                 existingProduct.LastUpdatedDate = DateTime.UtcNow;
 
-                // Update Flash Sale properties if provided
-                if (product.DiscountedPrice.HasValue)
+                // Update Inventory Quantity if different from Product StockQuantity
+                if (inventory != null && inventory.Quantity != productDto.StockQuantity)
                 {
-                    existingProduct.DiscountedPrice = product.DiscountedPrice;
-                }
-                if (product.FlashSaleStart.HasValue)
-                {
-                    existingProduct.FlashSaleStart = product.FlashSaleStart;
-                }
-                if (product.FlashSaleEnd.HasValue)
-                {
-                    existingProduct.FlashSaleEnd = product.FlashSaleEnd;
+                    inventory.Quantity = productDto.StockQuantity;
+                    _context.Inventories.Update(inventory);
                 }
 
-                await UpdateStockQuantityAsync(product.ProductID);
+                // Save product changes
+                _context.Products.Update(existingProduct);
 
-                if (_auditLogConfig.IsAuditLogEnabled) // Check if audit log is enabled
+                // Add Audit Log if enabled
+                if (_auditLogConfig.IsAuditLogEnabled)
                 {
-                    AuditLog auditLog = new AuditLog()
+                    var auditLog = new AuditLog
                     {
-                        Action = $"Updated Product details for {product.ProductName}.",
+                        Action = $"Updated Product details for {productDto.ProductName}.",
                         Timestamp = DateTime.UtcNow,
                         UserId = _user?.UserID ?? 0
                     };
                     await _context.AuditLogs.AddAsync(auditLog);
                 }
+
                 await _context.SaveChangesAsync();
             }
             catch (NotFoundException)
@@ -224,23 +268,32 @@ namespace ShopSiloAppFSD.Repository
             }
         }
 
-        public async Task<IEnumerable<ProductDisplayDto>> GetProductsByCategoryAsync(int? categoryId, string categoryName)
+        public async Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(int? categoryId, string categoryName)
         {
             try
             {
                 // Assuming you have a method to get products based on category ID
                 var categoryProducts = await _context.Products
                                         .Where(p => p.CategoryID == categoryId && p.IsActive) // Filter by category and active status
-                                        .Select(p => new ProductDisplayDto
+                                        .Select(p => new ProductDto
                                         {
                                             ProductID = p.ProductID,
                                             ProductName = p.ProductName,
                                             Description = p.Description,
                                             Price = p.Price,
-                                            DiscountedPrice = p.DiscountedPrice,
                                             StockQuantity = p.StockQuantity,
-                                            ImageURL = p.ImageURL
-                                        }).ToListAsync();
+                                            ImageURL = p.ImageURL,
+                                            CreatedDate = p.CreatedDate,
+                                            IsActive = p.IsActive,
+                                            SellerID = p.SellerID,
+                                            // Additional Fields
+                                            CategoryID = p.CategoryID, // Provide a default value if null
+                                            CategoryName = p.Category.CategoryName, // Assuming a relation to Category
+                                            TotalOrders = _context.OrderItems.Where(o => o.ProductID == p.ProductID).Sum(o => o.Quantity),
+                                            ReviewCount = _context.ProductReviews.Count(r => r.ProductID == p.ProductID),
+                                            AverageRating = _context.ProductReviews.Where(r => r.ProductID == p.ProductID).Average(r => (decimal?)r.Rating) ?? 0
+                                        })
+                .ToListAsync();
                 return categoryProducts;
             }
             catch (Exception ex)
@@ -249,7 +302,7 @@ namespace ShopSiloAppFSD.Repository
             }
         }
 
-        public async Task<IEnumerable<Product>> GetProductsByParentCategoryIdAsync(int parentCategoryId)
+        public async Task<IEnumerable<ProductDto>> GetProductsByParentCategoryIdAsync(int parentCategoryId)
         {
             // Fetch all subcategories under the specified parent category
             var subCategories = await _context.Categories
@@ -259,12 +312,31 @@ namespace ShopSiloAppFSD.Repository
 
             if (!subCategories.Any())
             {
-                return Enumerable.Empty<Product>(); // Return an empty collection if no subcategories are found
+                return Enumerable.Empty<ProductDto>(); // Return an empty collection if no subcategories are found
             }
 
             // Fetch all products belonging to the fetched subcategories
             return await _context.Products
                 .Where(p => subCategories.Contains(p.CategoryID)) // Filter by Category IDs (assuming products have a CategoryId)
+                .Select(p => new ProductDto
+                {
+                    ProductID = p.ProductID,
+                    ProductName = p.ProductName,
+                    Description = p.Description,
+                    Price = p.Price,
+                    StockQuantity = p.StockQuantity,
+                    ImageURL = p.ImageURL,
+                    CreatedDate = p.CreatedDate,
+                    IsActive = p.IsActive,
+                    SellerID = p.SellerID,
+
+                    // Additional Fields
+                    CategoryID = p.CategoryID,
+                    CategoryName = p.Category.CategoryName, // Assuming a relation to Category
+                    TotalOrders = _context.OrderItems.Where(o => o.ProductID == p.ProductID).Sum(o => o.Quantity),
+                    ReviewCount = _context.ProductReviews.Count(r => r.ProductID == p.ProductID),
+                    AverageRating = _context.ProductReviews.Where(r => r.ProductID == p.ProductID).Average(r => (decimal?)r.Rating) ?? 0
+                })
                 .ToListAsync();
         }
 

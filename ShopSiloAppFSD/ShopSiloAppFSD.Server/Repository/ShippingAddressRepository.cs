@@ -148,6 +148,37 @@ namespace ShopSiloAppFSD.Repository
             }
         }
 
+        public async Task<bool> DeleteAddressPermanentlyAsync(int addressId)
+        {
+            try
+            {
+                var address = await _context.Address.FindAsync(addressId);
+                if (address == null) return false; // Address not found
+
+                _context.Address.Remove(address); // Remove the address
+                await _context.SaveChangesAsync();
+
+                if (_auditLogConfig.IsAuditLogEnabled) // Check if audit log is enabled
+                {
+                    var auditLog = new AuditLog
+                    {
+                        Action = $"Shipping address permanently deleted for User {address.CustomerID}.",
+                        Timestamp = DateTime.Now,
+                        UserId = _user.UserID
+                    };
+                    await _context.AuditLogs.AddAsync(auditLog); // Log the action
+                }
+
+                await _context.SaveChangesAsync(); // Save changes to the database
+                return true; // Indicate successful deletion
+            }
+            catch (Exception ex)
+            {
+                // Consider logging the exception here
+                throw new RepositoryException("Error deleting address.", ex); // Throw a specific exception
+            }
+        }
+
         public async Task<Address?> GetAddressByIdAsync(int addressId)
         {
             try

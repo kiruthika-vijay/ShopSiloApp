@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\..\\shopsiloappfsd.client",
+"WorkingDirectory": "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\ShopSiloAppFSD.Server\\..\\shopsiloappfsd.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

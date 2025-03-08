@@ -1,6 +1,8 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { MdDelete } from "react-icons/md";
 import { BiSolidCopy } from "react-icons/bi";
+import { useSnackbar } from 'notistack';
+import Button from '@mui/material/Button';
 import {
     FaUserCircle,
     FaEdit,
@@ -13,6 +15,14 @@ import {
     FaTimes
 } from 'react-icons/fa';
 import './ProfilePage.css';
+
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import { apiClient, fetchUserId, getToken, getUserId } from '../../../common/Axios/auth';
 import EditProfileModal from './EditProfileModal';
 import AddressModal from './AddressModal';
@@ -37,6 +47,10 @@ const ProfilePage = () => {
     const [editData, setEditData] = useState(null);
     const [showCustomerForm, setShowCustomerForm] = useState(false);
     const [userId, setUserId] = useState(null);
+    const { enqueueSnackbar } = useSnackbar();
+    const [open, setOpen] = React.useState(false);
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
     useEffect(() => {
         const token = getToken();  // Assuming getToken() is a function that retrieves the token
@@ -54,6 +68,14 @@ const ProfilePage = () => {
 
     }, []);  // Empty dependency array to run on component mount
 
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const fetchAllData = async (token) => {
         setLoading(true);
@@ -103,6 +125,11 @@ const ProfilePage = () => {
         setAddressModalOpen(true);
     };
 
+    const handleAddressModalClose = () => {
+        setAddressModalOpen(false);
+        fetchAllData(token); // Call fetchAllData to refresh the addresses
+    };
+
     const handleSaveUpdatedProfile = (updatedData) => {
         setUser(prevUser => ({
             ...prevUser,
@@ -110,27 +137,24 @@ const ProfilePage = () => {
         }));
     };
 
+    // Function to save the new address
     const handleSaveAddress = (newAddress) => {
-        setAddresses(prevAddress => ({
-            ...prevAddress,
-            ...newAddress // Merge updated data into the user state
-        }));
+        setAddresses(prevAddresses => [...prevAddresses, newAddress]); // Append new address
+        enqueueSnackbar('New address added successfully!', { variant: 'success' }); // Show snackbar
     };
 
     const handleDeleteAddress = async (addressId) => {
-        if (window.confirm("Are you sure you want to delete this address?")) {
-            try {
-                await apiClient.delete(`/ShippingAddress/${addressId}`, {
-                    headers: { Authorization: `Bearer ${token}` }
-                });
-
-                // Update the state to remove the deleted address
-                setAddresses(prevAddresses => prevAddresses.filter(address => address.addressID !== addressId));
-                alert('Address deleted successfully!');
-            } catch (error) {
-                console.error('Error deleting address:', error);
-                alert('Failed to delete address. Please try again.');
-            }
+        try {
+            var response = await apiClient.delete(`/ShippingAddress/permanent-delete/${addressId}`, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            setOpen(false);
+            // Update the state to remove the deleted address
+            setAddresses(prevAddresses => prevAddresses.filter(address => address.addressID !== addressId));
+            enqueueSnackbar('Address deleted successfully!', { variant: 'success' });
+        } catch (error) {
+            console.error('Error deleting address:', error);
+            enqueueSnackbar('Failed to delete the address. Please try again.', { variant: 'error' });
         }
     };
 
@@ -286,12 +310,16 @@ const ProfilePage = () => {
         }
     };
 
+    // Copy to clipboard function with snackbar notification
     const copyToClipboard = (text) => {
-        navigator.clipboard.writeText(text).then(() => {
-            alert('Transaction ID copied to clipboard!');
-        }).catch(err => {
-            console.error('Failed to copy transaction ID: ', err);
-        });
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                enqueueSnackbar('Transaction ID copied to clipboard!', { variant: 'success' });
+            })
+            .catch(err => {
+                console.error('Failed to copy transaction ID: ', err);
+                enqueueSnackbar('Failed to copy transaction ID.', { variant: 'error' });
+            });
     };
 
     const formatDateTime = (dateString) => {
@@ -300,33 +328,33 @@ const ProfilePage = () => {
     };
 
     const renderOrderStatusIndicator = (status) => {
-          switch (status) {
+        switch (status) {
             case 'Pending':
-              return 'bg-yellow-400 text-black';  // Yellow background for pending orders
+                return 'bg-yellow-400 text-black';  // Yellow background for pending orders
             case 'Delivered':
-              return 'bg-green-500 text-white';  // Green background for delivered orders
+                return 'bg-green-500 text-white';  // Green background for delivered orders
             case 'Cancelled':
-              return 'bg-red-500 text-white';    // Red background for cancelled orders
+                return 'bg-red-500 text-white';    // Red background for cancelled orders
             case 'Shipped':
-              return 'bg-blue-500 text-white';   // Blue background for shipped orders
+                return 'bg-blue-500 text-white';   // Blue background for shipped orders
             default:
-              return 'bg-gray-400 text-white';   // Default background color
-          }
+                return 'bg-gray-400 text-white';   // Default background color
+        }
     };
 
     const renderPaymentStatusIndicator = (paymentStatus) => {
         switch (paymentStatus) {
             case 'Pending':
-              return 'bg-yellow-400 text-black';  // Yellow background for pending payments
+                return 'bg-yellow-400 text-black';  // Yellow background for pending payments
             case 'Success':
-              return 'bg-green-500 text-white';  // Green background for success payments
+                return 'bg-green-500 text-white';  // Green background for success payments
             case 'Failed':
-              return 'bg-red-500 text-white';    // Red background for failed payments
+                return 'bg-red-500 text-white';    // Red background for failed payments
             case 'Refunded':
-              return 'bg-blue-500 text-white';   // Blue background for refunded payments
+                return 'bg-blue-500 text-white';   // Blue background for refunded payments
             default:
-              return 'bg-gray-400 text-white';   // Default background color
-          }
+                return 'bg-gray-400 text-white';   // Default background color
+        }
     };
 
     const renderTabContent = () => {
@@ -350,16 +378,43 @@ const ProfilePage = () => {
                         {addresses.length > 0 ? (
                             addresses.map((address) => (
                                 <div className="address-box relative border p-4 mb-2" key={address.addressID}>
-                                    <FaTimes
-                                        className="absolute top-2 right-2 text-red-500 cursor-pointer hover:text-red-700"
-                                        onClick={() => handleDeleteAddress(address.addressID)}
-                                    />                                  
-
+                                    <React.Fragment>
+                                        <FaTimes
+                                            className="absolute top-2 right-2 text-red-500 cursor-pointer hover:text-red-700"
+                                            onClick={handleClickOpen}
+                                        />
+                                        <Dialog
+                                            fullScreen={fullScreen}
+                                            open={open}
+                                            onClose={handleClose}
+                                            BackdropProps={{
+                                                style: { backgroundColor: 'rgba(0, 0, 0, 0.3)' }  // Set desired transparency here
+                                            }}
+                                            aria-labelledby="responsive-dialog-title"
+                                        >
+                                            <DialogTitle id="responsive-dialog-title">
+                                                {"Are you sure you want to delete this address?"}
+                                            </DialogTitle>
+                                            <DialogContent>
+                                                <DialogContentText>
+                                                    You won't be able to recover the deleted address details. If you need to temporarily disable the address, please set it to inactive instead.
+                                                </DialogContentText>
+                                            </DialogContent>
+                                            <DialogActions>
+                                                <Button autoFocus onClick={handleClose}>
+                                                    Cancel
+                                                </Button>
+                                                <Button onClick={() => handleDeleteAddress(address.addressID)} autoFocus>
+                                                    Delete
+                                                </Button>
+                                            </DialogActions>
+                                        </Dialog>
+                                    </React.Fragment>
                                     <p>{address.addressLine1}</p>
                                     <p>{address.addressLine2}, {address.city}</p>
                                     <p>{address.state}, {address.postalCode}</p>
                                     <p>{address.country}</p>
-                                    
+
                                     <div className="flex justify-between items-center mt-2">
                                         <div className="flex items-center mr-4">
                                             <label className={`mr-2 ${address.isActive ? 'text-green-500 font-semibold' : 'text-red-500 font-semibold'}`}>
@@ -455,10 +510,12 @@ const ProfilePage = () => {
                                     <p><strong>Date:</strong> {new Date(payment.date).toLocaleDateString()}</p>
                                     <p><strong>Amount:</strong> &#8377;{payment.amount}</p>
                                     <p><strong>Method:</strong> Razorpay Transaction</p>
-                                    <div className="flex items-center">
-                                        <p><strong>Razorpayment ID:</strong> {payment.razorpayPaymentId}</p>
-                                        <BiSolidCopy className="copy-btn ml-2 cursor-pointer text-red-500" onClick={() => copyToClipboard(payment.razorpayPaymentId)} />
-                                    </div>
+                                    <React.Fragment>
+                                        <div className="flex items-center">
+                                            <p><strong>Razorpay Payment ID:</strong> {payment.razorpayPaymentId}</p>
+                                            <BiSolidCopy className="copy-btn ml-2 cursor-pointer text-red-500" onClick={() => copyToClipboard(payment.razorpayPaymentId)} />
+                                        </div>
+                                    </React.Fragment>
                                 </div>
                             ))
                         ) : (
@@ -543,11 +600,11 @@ const ProfilePage = () => {
             </div>
 
             {modalOpen && (
-                <EditProfileModal onClose={() => setModalOpen(false)} title="Edit Profile" data={editData} onSave={handleSaveUpdatedProfile}/>
+                <EditProfileModal onClose={() => setModalOpen(false)} title="Edit Profile" data={editData} onSave={handleSaveUpdatedProfile} />
             )}
 
             {addressModalOpen && (
-                <AddressModal onClose={() => setAddressModalOpen(false)} title="Add Address" addressData={addresses} onSave={handleSaveAddress} customerID={user.customerID} />
+                <AddressModal onClose={handleAddressModalClose} title="Add Address" addressData={addresses} onSave={handleSaveAddress} customerID={user.customerID} />
             )}
 
             {changePasswordModalOpen && (
@@ -563,7 +620,6 @@ const ProfilePage = () => {
                     handleClose={() => setShowCustomerForm(false)}
                 />
             )}
-
         </div>
     );
 };

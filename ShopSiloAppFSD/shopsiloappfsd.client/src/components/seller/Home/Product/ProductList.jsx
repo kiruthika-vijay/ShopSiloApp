@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Card, CardMedia, CardContent, Typography, Button, Switch, IconButton, Collapse } from '@mui/material';
-import { Star, StarBorder, ExpandMore } from '@mui/icons-material';
+import { Grid, Card, CardMedia, CardContent, Typography, Switch, IconButton, Collapse } from '@mui/material';
+import { Star, StarBorder } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { apiClient, getToken } from '../../../common/Axios/auth';
+import { MdExpandCircleDown } from "react-icons/md";
+import Fab from '@mui/material/Fab';
+import { MdEdit } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
+import Stack from '@mui/material/Stack';
 
-const ExpandMoreIcon = styled(IconButton)(({ theme, expand }) => ({
+const MdExpandCircleDownIcon = styled(IconButton)(({ theme, expand }) => ({
     transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
     transition: theme.transitions.create('transform', {
         duration: theme.transitions.duration.shortest,
@@ -14,6 +19,7 @@ const ExpandMoreIcon = styled(IconButton)(({ theme, expand }) => ({
 const ProductList = () => {
     const [products, setProducts] = useState([]);
     const [expanded, setExpanded] = useState({}); // Track expanded state of each product
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -44,6 +50,11 @@ const ProductList = () => {
         } catch (error) {
             console.error('Error toggling active status:', error);
         }
+    };
+
+    const handleEditClick = (productId) => {
+        // Navigate to the edit product page with the selected productId
+        navigate(`/seller/editproduct/${productId}`);
     };
 
     const handleExpandClick = (productID) => {
@@ -110,12 +121,31 @@ const ProductList = () => {
                                         />
                                     </div>
                                     {/* Expand More Button */}
-                                    <ExpandMoreIcon
-                                        expand={expanded[product.productID]}
-                                        onClick={() => handleExpandClick(product.productID)}
-                                    >
-                                        <ExpandMore />
-                                    </ExpandMoreIcon>
+                                    <Stack spacing={2} direction="row" alignItems="center">
+                                        <Fab
+                                            variant="contained"
+                                            color="primary"
+                                            onClick={() => handleEditClick(product.productID)}
+                                            sx={{ width: 40, height: 40 }} // Fixed size for Fab
+                                        >
+                                            <MdEdit style={{ fontSize: '1.2rem' }} /> {/* Adjust icon size */}
+                                        </Fab>
+
+                                        <MdExpandCircleDownIcon
+                                            expand={expanded[product.productID]}
+                                            onClick={() => handleExpandClick(product.productID)}
+                                            sx={{ cursor: 'pointer' }} // Fixed size for MdExpandCircleDownIcon
+                                        >
+                                            <Fab
+                                                variant="contained"
+                                                color="#c92029"
+                                                sx={{ width: 40, height: 40 }} // Fixed size for Fab
+                                            >
+                                                <MdExpandCircleDown style={{ fontSize: '8rem', color: '#c92029' }} /> {/* Adjust icon size */}
+                                            </Fab>                                            
+                                        </MdExpandCircleDownIcon>
+                                    </Stack>
+
                                 </div>
                             </CardContent>
                         </div>

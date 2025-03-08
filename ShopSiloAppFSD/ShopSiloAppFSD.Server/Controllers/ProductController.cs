@@ -98,71 +98,25 @@ namespace ShopSiloAppFSD.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(int id, [FromForm] UpdateProductDto productDto)
         {
+            if (id != productDto.ProductID)
+            {
+                return BadRequest("Product ID mismatch.");
+            }
+
             try
             {
-                if (id != productDto.ProductID)
-                {
-                    return BadRequest("Product ID mismatch.");
-                }
-
-                // Fetch the existing product from the database
-                var existingProduct = await _productRepository.GetProductByIdAsync(id);
-                if (existingProduct == null)
-                {
-                    return NotFound("Product not found.");
-                }
-
-                // **Handle Image Update**
-                if (productDto.Image != null)
-                {
-                    // If an existing image is present and it is hosted on Cloudinary, remove it
-                    if (!string.IsNullOrEmpty(existingProduct.ImageURL) && existingProduct.ImageURL.Contains("cloudinary"))
-                    {
-                        var publicId = _cloudinaryService.GetPublicIdFromUrl(existingProduct.ImageURL); // Extract the public ID
-                        await _cloudinaryService.DeleteImage(publicId); // Delete the existing image from Cloudinary
-                    }
-
-                    // Upload the new image to Cloudinary
-                    var uploadResult = await _cloudinaryService.UploadImageAsync(productDto.Image);
-                    if (uploadResult == null)
-                    {
-                        return BadRequest("Image upload failed.");
-                    }
-
-                    // Set the new image URL in the database
-                    existingProduct.ImageURL = uploadResult;
-                }
-                else if (productDto.RemoveImage)
-                {
-                    // **Handle Image Removal**: If user opts to remove the image
-                    if (!string.IsNullOrEmpty(existingProduct.ImageURL) && existingProduct.ImageURL.Contains("cloudinary"))
-                    {
-                        var publicId = _cloudinaryService.GetPublicIdFromUrl(existingProduct.ImageURL); // Extract the public ID
-                        await _cloudinaryService.DeleteImage(publicId); // Delete the image from Cloudinary
-                    }
-                    existingProduct.ImageURL = null; // Set the image URL to null
-                }
-
-                // **No New Image Upload**: If no image is uploaded and the image is not removed, retain the existing image URL
-                // (This is implicit: you don't change the `ImageURL` if neither of the above conditions are true)
-
-                // **Update Other Product Details**
-                existingProduct.ProductName = productDto.ProductName;
-                existingProduct.Description = productDto.Description;
-                existingProduct.Price = productDto.Price;
-                // Add any other fields you want to update here
-
-                // **Save changes to the repository**
-                await _productRepository.UpdateProductAsync(existingProduct);
-
-                return Ok(existingProduct);
+                await _productRepository.UpdateProductAsync(id, productDto);
+                return Ok("Product updated successfully.");
             }
-            catch (Exception ex)
+            catch (NotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (RepositoryException ex)
             {
                 return StatusCode(500, $"An error occurred while updating the product: {ex.Message}");
             }
         }
-
 
         // DELETE: api/Product/{id}
         [Authorize]

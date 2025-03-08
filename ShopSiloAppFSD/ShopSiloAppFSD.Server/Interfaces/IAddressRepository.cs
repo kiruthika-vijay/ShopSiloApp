@@ -7,6 +7,7 @@ namespace ShopSiloAppFSD.Interfaces
         Task<Address> AddAddressAsync(Address address);
         Task<Address> UpdateAddressAsync(Address address);
         Task<bool> DeleteAddressAsync(int addressId);
+        Task<bool> DeleteAddressPermanentlyAsync(int addressId);
         Task<Address?> GetAddressByIdAsync(int addressId);
         Task ToggleAddressStatusAsync(int addressId);
         Task ToggleBillingAddressStatusAsync(int addressId);

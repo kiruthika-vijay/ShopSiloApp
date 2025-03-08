@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { apiClient } from '../../common/Axios/auth';
 import SellerProductItem from './SellerProductItem.jsx'; // Assuming you will create a component to display product details
 
@@ -37,7 +37,7 @@ const SellerProductDetails = ({ sellerID }) => {
                         <tr key={product.productID} className="border-b hover:bg-gray-50">
                             <td className="py-2 px-4">{product.productID}</td>
                             <td className="py-2 px-4">{product.productName}</td>
-                            <td className="py-2 px-4">${product.price.toFixed(2)}</td>
+                            <td className="py-2 px-4">₹{product.price.toFixed(2)}</td>
                             {/* <td className="py-2 px-4">{product.quantitySold}</td> */}
                             <td className="py-2 px-4">
                                 <button

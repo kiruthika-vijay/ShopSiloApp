@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { apiClient, getToken } from '../../common/Axios/auth';
 import { AuthContext } from '../Auth/AuthContext';
 import { CountContext } from '../../common/Header/CountContext';
+import { useSnackbar } from 'notistack';
 
 const ShoppingCart = () => {
     const [addresses, setAddresses] = useState({ billing: [], shipping: [] });
@@ -24,6 +25,7 @@ const ShoppingCart = () => {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const { isLoggedIn, userId } = useContext(AuthContext);
     const navigate = useNavigate();
+    const { enqueueSnackbar } = useSnackbar();
 
     useEffect(() => {
         const token = getToken();
@@ -32,6 +34,7 @@ const ShoppingCart = () => {
             fetchAddresses(token);
             fetchCartItemsSellerId(token);
         }
+
     }, [isLoggedIn]);
 
     const fetchCartItems = async (token) => {
@@ -101,7 +104,7 @@ const ShoppingCart = () => {
         const token = getToken();
 
         if (!couponCode) {
-            setSavingsMessage("Please enter a coupon code.");
+            enqueueSnackbar("Please enter a coupon code.", { variant: 'warning' });
             return;
         }
 
@@ -117,16 +120,16 @@ const ShoppingCart = () => {
                 const discountValue = (subtotalAmount * discountPercent) / 100;
 
                 setDiscountAmount(discountValue);
-                setSavingsMessage(`Coupon applied successfully! You saved ₹ ${discountValue.toFixed(2)}.`);
+                enqueueSnackbar(`Coupon applied successfully! You saved ₹ ${discountValue.toFixed(2)}.`, { variant: 'success' });
 
                 // Recalculate total with the new discount amount
                 calculateTotal(cartItems, discountValue);
             }
         } catch (error) {
             if (error.response && error.response.status === 404) {
-                setSavingsMessage("Coupon not found.");
+                enqueueSnackbar("Coupon not found.", { variant: 'error' });
             } else {
-                setSavingsMessage("Invalid or expired coupon.");
+                enqueueSnackbar("Invalid or expired coupon.", { variant: 'error' });
             }
             setDiscountAmount(0);
             calculateTotal(cartItems); // Recalculate without discount
@@ -157,8 +160,16 @@ const ShoppingCart = () => {
                 headers: { Authorization: `Bearer ${token}` },
             });
             // Update the local cartItems state to remove the deleted item
-            setCartItems(prevItems => prevItems.filter(item => item.id !== itemId));
-            setCartCount(prevCount => prevCount - 1);
+            setCartItems(prevItems => {
+                const updatedItems = prevItems.filter(item => item.cartItemID !== itemId);
+                // If the updatedItems array is empty, you might want to reset the cart count or handle the empty state
+                if (updatedItems.length === 0) {
+                    setCartCount(0); // Reset cart count since there are no items left
+                } else {
+                    setCartCount(updatedItems.length); // Update cart count to the new length
+                }
+                return updatedItems; // Return the updated items array
+            });
             fetchCartItems(token);
         } catch (error) {
             console.error('Error removing cart item:', error);
@@ -201,7 +212,16 @@ const ShoppingCart = () => {
     };
 
     const handlePayment = async () => {
-        console.log(shippingAddressId, billingAddressId);
+        if (cartItems.length === 0) {
+            enqueueSnackbar('Your cart is empty. Please add items before proceeding to checkout.', { variant: 'error' });
+            return;
+        }
+
+        if (!shippingAddress) {
+            enqueueSnackbar('Please select a shipping address before proceeding to checkout.', { variant: 'warning' });
+            return;
+        }
+
         const registrationData = {
             name: 'John Doe',
             email: 'john@example.com',
@@ -464,17 +484,6 @@ const ShoppingCart = () => {
                         </button>
                     </form>
                 </div>
-                {/* Coupon status message */}
-                {savingsMessage && (
-                    <div className={`mt-2 border px-4 py-3 rounded text-center ${savingsMessage.includes("successfully")
-                            ? 'bg-green-100 border-green-400 text-green-700'
-                            : savingsMessage.includes("not found") || savingsMessage.includes("Invalid")
-                                ? 'bg-red-100 border-red-400 text-red-700'
-                                : ''
-                        }`}>
-                        <span className="block">{savingsMessage}</span>
-                    </div>
-                )}
             </div>
 
             <div className="mt-4">

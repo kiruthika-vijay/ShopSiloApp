@@ -305,7 +305,7 @@ namespace ShopSiloAppFSD.Repository
 
                 var products = await _context.Products
                     .Include(p => p.Category) // Include category details
-                    .Where(p => p.IsActive && p.SellerID == seller.SellerID)
+                    .Where(p => p.SellerID == seller.SellerID)
                     .Select(p => new ProductDto
                     {
                         ProductID = p.ProductID,

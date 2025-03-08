@@ -14,6 +14,7 @@ const CustomerOrderDetails = ({ customerID }) => {
         try {
             const response = await apiClient.get(`/Order/User/${customerID}`);
             setCustomerOrder(response.data.$values);
+            console.log(response.data.$values);
         } catch (error) {
             console.error('Error fetching customer orders:', error);
         }
@@ -37,7 +38,7 @@ const CustomerOrderDetails = ({ customerID }) => {
                     {customerOrder.map((order) => (
                         <tr key={order.orderID} className="border-b hover:bg-gray-50">
                             <td className="py-2 px-4">{order.orderID}</td>
-                            <td className="py-2 px-4">{order.orderDate}</td>
+                            <td className="py-2 px-4">{new Date(order.orderDate).toLocaleDateString('en-CA')}</td>
                             <td className="py-2 px-4">{order.totalAmount}</td>
                             <td className="py-2 px-4">{order.orderStatus}</td>
                             <td className="py-2 px-4">{order.trackingNumber}</td>

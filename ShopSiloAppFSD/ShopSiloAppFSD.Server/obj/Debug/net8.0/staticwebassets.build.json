@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "DIPg1wAlyWZYghSxgPo5+eodENW0Hp23DUnFbiHyZSc=",
+  "Hash": "KJJMYn11v5jjnVv6rKI7MTjX3SFToCPEnemItbbvBxU=",
   "Source": "ShopSiloAppFSD.Server",
   "BasePath": "_content/ShopSiloAppFSD.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "D:\\DotNetFSDCaseStudy\\ShopSiloAppFSD\\shopsiloappfsd.client\\shopsiloappfsd.client.esproj",
+      "Identity": "D:\\ShopSilo-DotNetFSDCaseStudy\\ShopSiloAppFSD\\shopsiloappfsd.client\\shopsiloappfsd.client.esproj",
       "Version": 2,
       "Source": "shopsiloappfsd.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

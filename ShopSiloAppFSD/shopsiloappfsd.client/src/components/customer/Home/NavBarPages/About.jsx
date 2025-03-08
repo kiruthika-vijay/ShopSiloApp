@@ -57,7 +57,7 @@ const AboutPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="flex flex-col items-center">
                         <img
-                            src="https://via.placeholder.com/150"
+                            src="/images/jane_doe.jpeg"
                             alt="Team Member 1"
                             className="rounded-full w-32 h-32 mb-4"
                         />
@@ -66,7 +66,7 @@ const AboutPage = () => {
                     </div>
                     <div className="flex flex-col items-center">
                         <img
-                            src="https://via.placeholder.com/150"
+                            src="/images/john_smith.png"
                             alt="Team Member 2"
                             className="rounded-full w-32 h-32 mb-4"
                         />
@@ -75,7 +75,7 @@ const AboutPage = () => {
                     </div>
                     <div className="flex flex-col items-center">
                         <img
-                            src="https://via.placeholder.com/150"
+                            src="/images/emily_brown.png"
                             alt="Team Member 3"
                             className="rounded-full w-32 h-32 mb-4"
                         />

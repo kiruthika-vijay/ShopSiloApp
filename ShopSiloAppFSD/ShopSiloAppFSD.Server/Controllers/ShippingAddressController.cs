@@ -237,5 +237,24 @@ namespace ShopSiloAppFSD.Controllers
                 return StatusCode(500, new { message = ex.Message });
             }
         }
+
+        [HttpDelete("permanent-delete/{id}")]
+        public async Task<IActionResult> DeleteAddressPermanent(int id)
+        {
+            if (id <= 0)
+            {
+                return BadRequest("Invalid address ID.");
+            }
+
+            var result = await _addressRepository.DeleteAddressPermanentlyAsync(id);
+            if (result)
+            {
+                return NoContent(); // Return 204 No Content on success
+            }
+            else
+            {
+                return NotFound($"Address with ID {id} not found."); // Return 404 Not Found if not successful
+            }
+        }
     }
 }

@@ -1,2 +1,3 @@
 D:\HEXA-SEGUE 201 - .NET FSD\FullStackSHOPSILO\ShopSiloAppFSD\shopsiloappfsd.client\obj\Debug\shopsiloappfsd.client.esproj.CoreCompileInputs.cache
 D:\DotNetFSDCaseStudy\ShopSiloAppFSD\shopsiloappfsd.client\obj\Debug\shopsiloappfsd.client.esproj.CoreCompileInputs.cache
+D:\ShopSilo-DotNetFSDCaseStudy\ShopSiloAppFSD\shopsiloappfsd.client\obj\Debug\shopsiloappfsd.client.esproj.CoreCompileInputs.cache

@@ -9,6 +9,8 @@ import useCart from '../HomeUtils/useCart';
 import { CountContext } from '../../../common/Header/CountContext';
 import AddToCartButton from '../common/AddToCart';
 import { Tab } from 'bootstrap';
+import { useSnackbar } from 'notistack';
+
 
 const Wishlist = () => {
     const { setCartCount, setWishlistCount } = useContext(CountContext);
@@ -17,6 +19,7 @@ const Wishlist = () => {
     const { wishlistId, addToWishlist, removeFromWishlist, wishlistLoading, wishlistError } = useWishlist();
     const { addToCart } = useCart();
     const { isLoggedIn } = useContext(AuthContext); // Get isLoggedIn from context
+    const { enqueueSnackbar } = useSnackbar();
 
     useEffect(() => {
         const token = getToken();
@@ -53,9 +56,10 @@ const Wishlist = () => {
         try {
             const token = getToken();
             removeFromWishlist(productID);
+            enqueueSnackbar('Product removed from wishlist successfully!', { variant: 'success' });
             setWishlistItems(wishlistItems.filter(item => item.productID !== productID));
         } catch (error) {
-            console.error('Error removing item from wishlist:', error);
+            enqueueSnackbar('Failed to remove product from wishlist.', { variant: 'error' });
         }
     };
 
@@ -84,18 +88,17 @@ const Wishlist = () => {
 
         try {
             const token = getToken();
-            const addToCartPromises = wishlistItems.map(item =>
-                apiClient.post(`/Wishlists/${wishlistId}/move-to-bag`, {
-                    headers: { Authorization: `Bearer ${token}` },
-                })
-            );
-            await Promise.all(addToCartPromises);
-            setWishlistItems([]); // Clear wishlist after moving to 
+            await apiClient.post(`/Wishlists/${wishlistId}/move-to-bag`, {
+                headers: { Authorization: `Bearer ${token}` },
+            });
+
+            setWishlistItems([]); // Clear wishlist after moving to cart
             setWishlistCount(0);
-            // you can update the cart count based on the number of items moved
+            // Update the cart count based on the number of items moved
             setCartCount(prevCartCount => prevCartCount + wishlistItems.length);
+            enqueueSnackbar('All Products moved to cart successfully!', { variant: 'success' });
         } catch (error) {
-            console.error('Error moving all items to cart:', error);
+            enqueueSnackbar('Error moving all products to cart!', { variant: 'error' });
         }
     };
 
@@ -150,8 +153,7 @@ const Wishlist = () => {
                                     <button
                                         onClick={() => removeItemFromWishlist(item.productID)}
                                         className="absolute top-2 right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md"
-                                        aria-label="Remove from wishlist"
-                                    >
+                                        aria-label="Remove from wishlist">
                                         <FaTrash className="text-black" />
                                     </button>
                                 </div>

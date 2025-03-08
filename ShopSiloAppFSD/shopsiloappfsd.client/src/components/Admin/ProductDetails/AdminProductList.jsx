@@ -1,8 +1,17 @@
 ﻿import React, { useState, useEffect } from 'react';
 import { apiClient } from '../../common/Axios/auth';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 import ProductForm from './ProductForm';
 import SelectDropdown from './SelectDropdown';
 import Pagination from '@mui/material/Pagination';
+import { useNavigate } from 'react-router-dom';
 
 const AdminProductList = () => {
     const [products, setProducts] = useState([]);
@@ -13,10 +22,21 @@ const AdminProductList = () => {
     const [showProductList, setShowProductList] = useState(true);
     const [productID, setProductID] = useState(undefined);
     const [reviews, setReviews] = useState({});
-
+    const [open, setOpen] = React.useState(false);
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+    const navigate = useNavigate();
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1);
     const [pageSize] = useState(5); // Set number of products per page
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     useEffect(() => {
         fetchProducts();
@@ -33,7 +53,7 @@ const AdminProductList = () => {
             setProducts(response.data.$values);
             console.log(response.data.$values);
             setFilteredProducts(response.data.$values);
-            response.data.$values.forEach(product => fetchProductReviews(product.productID));
+            //response.data.$values.forEach(product => fetchProductReviews(product.productID));
         } catch (error) {
             console.error('Error fetching products:', error);
         }
@@ -50,14 +70,14 @@ const AdminProductList = () => {
         }
     };
 
-    const fetchProductReviews = async (productId) => {
-        try {
-            const response = await apiClient.get(`/ProductReview/Product/${productId}`);
-            setReviews(prevReviews => ({ ...prevReviews, [productId]: response.data.reviews.$values }));
-        } catch (error) {
-            console.error(`Error fetching reviews for product ${productId}:`, error);
-        }
-    };
+    //const fetchProductReviews = async (productId) => {
+    //    try {
+    //        const response = await apiClient.get(`/ProductReview/Product/${productId}`);
+    //        setReviews(prevReviews => ({ ...prevReviews, [productId]: response.data.reviews.$values }));
+    //    } catch (error) {
+    //        console.error(`Error fetching reviews for product ${productId}:`, error);
+    //    }
+    //};
 
     const onClose = async () => {
         setProductID(undefined);
@@ -66,18 +86,22 @@ const AdminProductList = () => {
     };
 
     const handleDelete = async (id) => {
-        if (window.confirm('Are you sure you want to delete this product?')) {
-            try {
-                await apiClient.delete(`/Product/${id}`);
-                fetchProducts();
-            } catch (error) {
-                console.error('Error deleting product:', error);
-            }
+        try {
+            await apiClient.delete(`/Product/${id}`);
+            fetchProducts();
+            setOpen(false);
+        } catch (error) {
+            console.error('Error deleting product:', error);
         }
     };
 
     const handleProductUpdated = async () => {
         await fetchProducts(); // Fetch products to update the list dynamically
+    };
+
+    const handleEditClick = (productId) => {
+        // Navigate to the edit product page with the selected productId
+        navigate(`/admin/editproduct/${productId}`);
     };
 
     const getAverageRating = (productReviews) => {
@@ -152,8 +176,40 @@ const AdminProductList = () => {
 
                                     {/* Edit and Delete Buttons */}
                                     <div className="flex justify-end mt-4">
-                                        <button onClick={() => { setShowProductList(false); setProductID(product.productID); }} className="text-blue-500 hover:underline mr-4">Edit</button>
-                                        <button onClick={() => handleDelete(product.productID)} className="text-red-500 hover:underline">Delete</button>
+                                        <Button variant="outlined" onClick={() => handleEditClick(product.productID)} sx={{ backgroundColor: '#00BCD4', color: 'white', border: '#00BCD4', marginRight: 2, '&:hover': { backgroundColor: '#03A9F4' } }}>
+                                            Edit
+                                        </Button>
+                                        <React.Fragment>
+                                            <Button variant="outlined" onClick={handleClickOpen} sx={{ backgroundColor: '#c92029', color: 'white', border: '#c92029', '&:hover': { backgroundColor: 'red' } }}>
+                                                Delete
+                                            </Button>
+                                            <Dialog
+                                                fullScreen={fullScreen}
+                                                open={open}
+                                                onClose={handleClose}
+                                                BackdropProps={{
+                                                    style: { backgroundColor: 'rgba(0, 0, 0, 0.3)' }  // Set desired transparency here
+                                                }}
+                                                aria-labelledby="responsive-dialog-title"
+                                            >
+                                            <DialogTitle id="responsive-dialog-title">
+                                                {"Are your sure you want to delete this product?"}
+                                            </DialogTitle>
+                                            <DialogContent>
+                                                <DialogContentText>
+                                                    You won't be able to recover the deleted product details forever.
+                                                </DialogContentText>
+                                            </DialogContent>
+                                            <DialogActions>
+                                                <Button autoFocus onClick={handleClose}>
+                                                    Cancel
+                                                </Button>
+                                                <Button onClick={() => handleDelete(product.productID)} autoFocus>
+                                                    Delete
+                                                </Button>
+                                            </DialogActions>
+                                            </Dialog>
+                                        </React.Fragment>
                                     </div>
                                 </div>
                             </div>

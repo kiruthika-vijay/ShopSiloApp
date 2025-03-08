@@ -62,7 +62,7 @@ const EditProductForm = () => {
                         description: product.description,
                         price: product.price,
                         stockQuantity: product.stockQuantity,
-                        categoryID: product.subCategoryID,
+                        categoryID: product.categoryID,
                         sellerId: product.sellerId,
                         imageUrl: product.imageUrl, // Populate with existing Cloudinary image URL
                         publicId: product.publicId // Public ID for future deletions or updates
@@ -95,7 +95,7 @@ const EditProductForm = () => {
             categoryID: selectedCategory.categoryID,
             categoryName: selectedCategory.categoryName,
             subCategoryID: '',
-            subCategoryName: ''
+            subCategoryName: '',
         });
         setSubCategories(selectedCategory.subCategories.$values);
     };
@@ -117,7 +117,7 @@ const EditProductForm = () => {
         formData.append('description', productData.description);
         formData.append('price', productData.price);
         formData.append('stockQuantity', productData.stockQuantity);
-        formData.append('categoryID', productData.categoryID);
+        formData.append('categoryID', productData.subCategoryID);
         formData.append('sellerId', sellerID);
 
         if (image) {
@@ -216,7 +216,7 @@ const EditProductForm = () => {
                 </Grid>
                 <Grid item xs={12}>
                     <FormControl fullWidth variant="outlined">
-                        <InputLabel id="category-select-label">Category</InputLabel>
+                        <InputLabel style={{ backgroundColor: '#f3f4f6', paddingLeft: 4, paddingRight: 4}} id="category-select-label">Category</InputLabel>
                         <Select
                             labelId="category-select-label"
                             value={productData.categoryName}
@@ -234,7 +234,7 @@ const EditProductForm = () => {
                 {subCategories.length > 0 && (
                     <Grid item xs={12}>
                         <FormControl fullWidth variant="outlined">
-                            <InputLabel id="subcategory-select-label">Subcategory</InputLabel>
+                            <InputLabel style={{ backgroundColor: '#f3f4f6', paddingLeft: 4, paddingRight: 4 }} id="subcategory-select-label">Subcategory</InputLabel>
                             <Select
                                 labelId="subcategory-select-label"
                                 value={productData.subCategoryName}

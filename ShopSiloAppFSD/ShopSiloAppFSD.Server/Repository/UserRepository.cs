@@ -419,7 +419,7 @@ namespace ShopSiloAppFSD.Repository
             // Step 4: Create a secure random token using cryptography
             using (var rng = new System.Security.Cryptography.RNGCryptoServiceProvider())
             {
-                byte[] tokenData = new byte[32];
+                byte[] tokenData = new byte[64];
                 rng.GetBytes(tokenData);
 
                 // Convert to a URL-safe base64 string

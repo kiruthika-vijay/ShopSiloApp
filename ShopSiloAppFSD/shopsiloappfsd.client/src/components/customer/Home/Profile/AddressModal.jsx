@@ -3,9 +3,11 @@ import { apiClient } from '../../../common/Axios/auth';
 import Select from 'react-select';  // react-select for searchable dropdowns
 import Toggle from 'react-toggle';  // For the toggle switches
 import 'react-toggle/style.css';    // For toggle styling
+import { useSnackbar } from 'notistack';
 
 const AddressModal = ({ onClose, title, addressData, customerID }) => {
     // State to hold form data
+    const { enqueueSnackbar } = useSnackbar();
     const [formData, setFormData] = useState({
         addressLine1: '',
         addressLine2: '',
@@ -110,10 +112,10 @@ const AddressModal = ({ onClose, title, addressData, customerID }) => {
         try {
             // Assuming you have an API endpoint to save or update the address
             const response = await apiClient.post(`/ShippingAddress`, formData); // Ensure the correct endpoint
-            console.log("Address saved:", response.data); // Optional: log the response
-            onClose(); // Close the modal after saving
+            enqueueSnackbar('New address added successfully.', { variant: 'success' });
+            onClose();
         } catch (error) {
-            console.error("Error saving address:", error);
+            enqueueSnackbar('Error adding the address. Please try again.', { variant: 'error' });
             // Optionally handle error response (e.g., show error message)
         }
     };

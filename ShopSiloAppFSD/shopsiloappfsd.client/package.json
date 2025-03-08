@@ -23,6 +23,7 @@
     "echarts-for-react": "^3.0.2",
     "jspdf": "^2.5.2",
     "jspdf-autotable": "^3.8.3",
+    "notistack": "^3.0.1",
     "postcss": "^8.4.47",
     "prop-types": "^15.8.1",
     "razorpay": "^2.9.4",

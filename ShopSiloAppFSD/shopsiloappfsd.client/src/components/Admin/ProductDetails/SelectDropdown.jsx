@@ -3,6 +3,7 @@ import React from 'react';
 //how to create generic control.
 const SelectDropdown = ({ data, onSelect, title }) => {
     return (
+        console.log(data),
         <select
             className="border rounded p-2"
             onChange={(e) => onSelect(e.target.value)}

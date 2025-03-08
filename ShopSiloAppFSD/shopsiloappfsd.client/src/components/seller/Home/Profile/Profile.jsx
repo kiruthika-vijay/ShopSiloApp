@@ -14,7 +14,6 @@ const Profile = () => {
     });
     const [isExistingSeller, setIsExistingSeller] = useState(false); // Start with false if no profile exists
     const { fetchProfile, updateProfile, addProfile } = useApi(); // Custom hook for API calls
-
     useEffect(() => {
         const getProfile = async () => {
             const sellerIdFromToken = getUserId(); // Get seller ID from the token
