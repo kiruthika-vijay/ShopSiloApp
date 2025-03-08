@@ -151,34 +151,41 @@ To run the project:
     }
   },
   "ConnectionStrings": {
-    "ShopSiloConStr": "server=SERVER_NAME;database=DATABASE_NAME;integrated security=True;TrustServerCertificate=True;"
+    "ShopSiloConStr": "Server=${DB_SERVER};Database=${DB_NAME};integrated security=True;TrustServerCertificate=True;"
   },
   "Razorpay": {
-    "ApiKey": "RAZORPAY_APIKEY",
-    "ApiSecret": "RAZORPAY_APISECRET"
+    "ApiKey": "${RAZORPAY_API_KEY}",
+    "ApiSecret": "${RAZORPAY_API_SECRET}"
   },
   "Cloudinary": {
-    "CloudName": "CLOUDINARY_CLOUDNAME",
-    "ApiKey": "CLOUDINARY_APIKEY",
-    "ApiSecret": "CLOUDINARY_APISECRET"
+    "CloudName": "${CLOUDINARY_NAME}",
+    "ApiKey": "${CLOUDINARY_API_KEY}",
+    "ApiSecret": "${CLOUDINARY_API_SECRET}"
+  },
+  "GoogleAuthSettings": {
+    "ClientId": "${GOOGLE_CLIENT_ID}",
+    "ClientSecret": "${GOOGLE_CLIENT_SECRET}"
   },
   "AllowedHosts": "*",
   "Jwt": {
     "Issuer": "Issuer",
     "Audience": "Audience",
-    "Key": "JWT_RANDOM_KEY" //random key
+    "Key": "${JWT_SECRET_KEY}"
+  },
+  "ReactApp": {
+    "REACT_APP_URL": "https://localhost:5173"
   }
 }
 ```
 
 ## **Setting Up Env Files for Secure Access of Credentials**
 ### **Client .env file**
-```
+```bash
 VITE_GOOGLE_CLIENT_ID={client_id}.apps.googleusercontent.com
 ```
 
 ### **Server .env file**
-```
+```bash
 # Database Configuration
 DB_SERVER=DB_SERVER
 DB_NAME=DB_NAME
