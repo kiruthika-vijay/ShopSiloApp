@@ -8,14 +8,10 @@
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
 - [Installation and Setup](#installation-and-setup)
 - [Running the Project](#running-the-project)
-- [API Endpoints](#api-endpoints)
-- [Environment Variables](#environment-variables)
-- [Setting up the API credentials APPSETTINGS.JSON](#setting-up-the-api-credentials-appsettings.json)
-- [Setting Up Env Files for Secure Access of Credentials](#setting-up-the-env-files-for-secure-access-of-credentials)
-- [License](#license)
+- [Environment Variables](#setting-up-env-files-for-secure-access-of-credentials)
+- [Setting up the API credentials APPSETTINGS.JSON](#setting-up-the-api-credentials-appsettingsjson)
 
 ---
 
